@@ -3,31 +3,13 @@
 import Link from "next/link";
 
 import { BienCard } from "@/components/bien-card";
-import { useFavoris } from "@/components/favoris-provider";
+import { useFavoris } from "@/components/use-favoris";
 import { BIENS } from "@/data/biens";
 
 const muted = "color-mix(in srgb, var(--color-text) 70%, transparent)";
 
 export function FavorisListe() {
-  const { refs, ready } = useFavoris();
-
-  // Held back until localStorage is read, otherwise the empty state flashes
-  // for anyone who does have favourites.
-  if (!ready) {
-    return (
-      <p
-        style={{
-          fontSize: 11.5,
-          letterSpacing: "0.2em",
-          textTransform: "uppercase",
-          color: muted,
-        }}
-      >
-        Chargement…
-      </p>
-    );
-  }
-
+  const { refs } = useFavoris();
   const biens = BIENS.filter((b) => refs.includes(b.ref));
 
   if (biens.length === 0) {

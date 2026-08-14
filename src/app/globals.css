@@ -12,13 +12,13 @@
    ══════════════════════════════════════════════════════════════════════ */
 
 :root {
-  --color-bg: #ffffff;
+  --color-bg: #fbf8f1;
   /* Off-white pulled a few degrees toward the accent rather than the
      design's flat grey — panels read as part of the palette, not as a
      separate neutral sitting on top of it. */
-  --color-surface: #f1f4f3;
-  --color-text: #201e1d;
-  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+  --color-surface: #f3eee3;
+  --color-text: #171615;
+  --color-divider: color-mix(in srgb, #171615 18%, transparent);
 
   /* Tonal ramps — one shared lightness scale, so the same step of any role
      matches the others in visual value. */
@@ -33,16 +33,20 @@
   --color-neutral-900: #2d2b2b;
 
   /* Deep green — the house accent. */
-  --color-accent: #0e6f5e;
-  --color-accent-100: #dfeeea;
-  --color-accent-200: #bcdcd5;
-  --color-accent-300: #93c6bc;
-  --color-accent-400: #4f9d8e;
-  --color-accent-500: #0e6f5e;
-  --color-accent-600: #0b5c4e;
-  --color-accent-700: #08483e;
-  --color-accent-800: #063429;
-  --color-accent-900: #04231c;
+  --color-accent: #0e4f45;
+  --color-accent-100: #e3ece7;
+  --color-accent-200: #c3d7ce;
+  --color-accent-300: #94b9ab;
+  --color-accent-400: #548d7d;
+  --color-accent-500: #0e4f45;
+  --color-accent-600: #0a423a;
+  --color-accent-700: #07352f;
+  --color-accent-800: #062821;
+  --color-accent-900: #031d18;
+
+  --color-gold: #b78a42;
+  --color-gold-100: #f3e8d2;
+  --color-ink: #11100f;
 
   --color-accent-2: #0e6f5e;
   --color-accent-2-100: #dfeeea;
@@ -55,9 +59,9 @@
   --color-accent-2-800: #063429;
   --color-accent-2-900: #04231c;
 
-  --font-heading: var(--font-cormorant), "Times New Roman", serif;
-  --font-heading-weight: 400;
-  --font-body: var(--font-jost), system-ui, sans-serif;
+  --font-heading: var(--font-display), "Times New Roman", serif;
+  --font-heading-weight: 500;
+  --font-body: var(--font-sans), system-ui, sans-serif;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -66,13 +70,13 @@
   --space-6: 24px;
   --space-8: 32px;
 
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
 
-  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
-  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
-  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+  --shadow-sm: 0 10px 24px color-mix(in srgb, #171615 8%, transparent);
+  --shadow-md: 0 18px 44px color-mix(in srgb, #171615 12%, transparent);
+  --shadow-lg: 0 34px 88px color-mix(in srgb, #171615 18%, transparent);
 }
 
 /* Noir & blanc — kept from the design as an opt-in variant. */
@@ -123,6 +127,8 @@
   --color-accent-700: var(--color-accent-700);
   --color-accent-800: var(--color-accent-800);
   --color-accent-900: var(--color-accent-900);
+  --color-gold: var(--color-gold);
+  --color-gold-100: var(--color-gold-100);
 
   --color-neutral-100: var(--color-neutral-100);
   --color-neutral-200: var(--color-neutral-200);
@@ -156,12 +162,14 @@
 
 body {
   margin: 0;
-  background: var(--color-bg);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-bg) 82%, white) 0%, var(--color-bg) 420px),
+    var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 16.5px;
-  line-height: 1.72;
-  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.68;
+  font-weight: 400;
   text-wrap: pretty;
 }
 
@@ -174,7 +182,7 @@ h6 {
   font-family: var(--font-heading);
   font-weight: var(--font-heading-weight);
   line-height: 1.12;
-  letter-spacing: -0.015em;
+  letter-spacing: 0;
   margin: 0 0 var(--space-2);
 }
 
@@ -207,6 +215,12 @@ a {
   color: var(--color-accent-700);
   text-decoration: none;
   text-underline-offset: 3px;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 a:hover {
   color: var(--color-accent);
@@ -253,7 +267,7 @@ figcaption {
   }
 
   .grayscale-photo {
-    filter: grayscale(1) contrast(1.08);
+    filter: saturate(0.86) contrast(1.04);
   }
 
   /* — buttons — */
@@ -266,14 +280,14 @@ figcaption {
     text-decoration: none;
     font-family: var(--font-body);
     font-size: 12.5px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.2;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-text);
     background: transparent;
     border: 1px solid transparent;
-    padding: var(--space-2) calc(var(--space-3) * 1.2);
+    padding: 12px 18px;
     border-radius: var(--radius-md);
   }
   .btn svg {
@@ -286,16 +300,19 @@ figcaption {
   .btn-primary {
     background: var(--color-accent);
     color: var(--color-bg);
+    box-shadow: 0 14px 30px color-mix(in srgb, var(--color-accent) 20%, transparent);
   }
   .btn-primary:hover {
     background: var(--color-accent-600);
     color: var(--color-bg);
+    transform: translateY(-1px);
   }
   .btn-primary:active {
     background: var(--color-accent-700);
   }
   .btn-secondary {
-    border-color: var(--color-divider);
+    border-color: color-mix(in srgb, var(--color-text) 24%, transparent);
+    background: color-mix(in srgb, var(--color-bg) 72%, white);
   }
   .btn-secondary:hover {
     background: color-mix(in srgb, var(--color-text) 7%, transparent);
@@ -305,7 +322,7 @@ figcaption {
   }
   .btn-ghost {
     color: var(--color-accent);
-    padding-inline: var(--space-1);
+    padding-inline: 10px;
   }
   .btn-ghost:hover {
     background: color-mix(in srgb, var(--color-accent) 10%, transparent);
@@ -335,13 +352,13 @@ figcaption {
   .input {
     width: 100%;
     min-height: 36px;
-    padding: 6px 10px;
+    padding: 10px 12px;
     font-family: var(--font-body);
     font-size: 14px;
     color: var(--color-text);
     caret-color: var(--color-accent);
-    background: var(--color-surface);
-    border: 1px solid var(--color-divider);
+    background: color-mix(in srgb, var(--color-bg) 78%, white);
+    border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
     border-radius: var(--radius-md);
   }
   .input:hover {
@@ -470,22 +487,23 @@ figcaption {
     align-items: center;
     font-family: var(--font-body);
     font-size: 11px;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 3px 10px;
+    padding: 5px 10px;
     border-radius: calc(var(--radius-md) * 0.75);
   }
   .tag-accent {
-    background: var(--color-accent-100);
-    color: var(--color-accent-800);
+    background: var(--color-accent-900);
+    color: var(--color-bg);
   }
   .tag-neutral {
     background: var(--color-neutral-100);
     color: var(--color-neutral-800);
   }
   .tag-outline {
-    border: 1px solid var(--color-accent);
-    color: var(--color-accent);
+    border: 1px solid color-mix(in srgb, var(--color-gold) 72%, transparent);
+    color: var(--color-ink);
+    background: var(--color-gold-100);
   }
 
   /* — navigation — */
@@ -496,7 +514,7 @@ figcaption {
     gap: var(--space-4);
     row-gap: 12px;
     padding: var(--space-3) var(--space-4);
-    border-bottom: 2px solid var(--color-divider);
+    border-bottom: 1px solid var(--color-divider);
   }
   .nav-brand {
     font-family: var(--font-heading);

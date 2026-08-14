@@ -35,7 +35,14 @@ export function ImageSlot({
   if (src) {
     return (
       <div className={`relative overflow-hidden ${className}`} style={style}>
-        <Image src={src} alt={alt} fill priority={priority} className="object-cover" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority={priority}
+          sizes={fill ? "100vw" : "(min-width: 1024px) 42vw, 100vw"}
+          className="object-cover"
+        />
       </div>
     );
   }

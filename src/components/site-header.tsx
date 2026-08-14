@@ -3,35 +3,63 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { useFavoris } from "@/components/favoris-provider";
+import { useFavoris } from "@/components/use-favoris";
 
 const LIENS = [
-  { href: "/biens", label: "Nos biens" },
-  { href: "/agence", label: "L’agence" },
+  { href: "/biens", label: "Biens" },
+  { href: "/agence", label: "Agence" },
   { href: "/estimation", label: "Estimation" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const { count, ready } = useFavoris();
+  const { count } = useFavoris();
 
   return (
     <nav
       className="nav sticky top-0 z-20"
       style={{
-        background: "var(--color-bg)",
-        borderBottom: "2px solid var(--color-divider)",
-        gap: 28,
-        paddingBlock: 20,
+        background: "color-mix(in srgb, var(--color-bg) 86%, white)",
+        borderBottom: "1px solid var(--color-divider)",
+        gap: 26,
+        padding: "16px clamp(18px, 4vw, 42px)",
+        backdropFilter: "blur(18px)",
       }}
     >
       <Link
         href="/"
         className="nav-brand"
-        style={{ fontSize: 27, letterSpacing: "0.16em" }}
+        style={{
+          display: "grid",
+          gap: 1,
+          color: "var(--color-ink)",
+          lineHeight: 1,
+          marginRight: "clamp(8px, 3vw, 36px)",
+        }}
       >
-        ALASSANI
+        <span
+          style={{
+            fontFamily: "var(--font-heading)",
+            fontSize: 24,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+          }}
+        >
+          Alassani
+        </span>
+        <span
+          style={{
+            fontFamily: "var(--font-body)",
+            fontSize: 10,
+            fontWeight: 800,
+            letterSpacing: "0.24em",
+            textTransform: "uppercase",
+            color: "var(--color-gold)",
+          }}
+        >
+          Immobilier Lomé
+        </span>
       </Link>
 
       {LIENS.map((lien) => (
@@ -41,7 +69,8 @@ export function SiteHeader() {
           aria-current={pathname.startsWith(lien.href) ? "page" : undefined}
           style={{
             fontSize: 11.5,
-            letterSpacing: "0.18em",
+            fontWeight: 800,
+            letterSpacing: "0.14em",
             textTransform: "uppercase",
           }}
         >
@@ -52,15 +81,13 @@ export function SiteHeader() {
       <Link
         href="/favoris"
         className="btn btn-ghost"
-        style={{ marginLeft: "auto", fontSize: 13 }}
+        style={{ marginLeft: "auto", fontSize: 12 }}
       >
-        {/* Renders "Favoris" until localStorage is read, so server and client
-            markup match on the first pass. */}
-        Favoris{ready ? ` (${count})` : ""}
+        Favoris ({count})
       </Link>
 
-      <Link href="/contact" className="btn btn-primary" style={{ fontSize: 13 }}>
-        Prendre rendez-vous
+      <Link href="/contact" className="btn btn-primary" style={{ fontSize: 12 }}>
+        Rendez-vous
       </Link>
     </nav>
   );

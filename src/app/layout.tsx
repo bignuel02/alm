@@ -1,24 +1,32 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Jost } from "next/font/google";
+import localFont from "next/font/local";
 
-import { FavorisProvider } from "@/components/favoris-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { AGENCE } from "@/data/agence";
 
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  display: "swap",
+const display = localFont({
+  variable: "--font-display",
+  src: [
+    {
+      path: "../../design/assets/acc6d29c.woff2",
+      weight: "400 700",
+      style: "normal",
+    },
+  ],
 });
 
-const jost = Jost({
-  variable: "--font-jost",
-  subsets: ["latin"],
-  display: "swap",
+const sans = localFont({
+  variable: "--font-sans",
+  src: [
+    {
+      path: "../../design/assets/60e6d122.woff2",
+      weight: "400 800",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -31,13 +39,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${jost.variable} h-full`}>
+    <html lang="fr" className={`${display.variable} ${sans.variable} h-full`}>
       <body className="flex min-h-full flex-col antialiased">
-        <FavorisProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </FavorisProvider>
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

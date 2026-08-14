@@ -8,12 +8,13 @@ import { BUDGETS, TOUS_TYPES, TYPES } from "@/data/agence";
 const labelStyle: React.CSSProperties = {
   display: "block",
   fontSize: 11,
-  letterSpacing: "0.18em",
+  fontWeight: 800,
+  letterSpacing: "0.16em",
   textTransform: "uppercase",
   marginBottom: 10,
+  color: "color-mix(in srgb, var(--color-text) 72%, transparent)",
 };
 
-/** Home-page search box. Hands its state to /biens as query params. */
 export function RechercheRapide() {
   const router = useRouter();
   const [q, setQ] = useState("");
@@ -33,20 +34,24 @@ export function RechercheRapide() {
   return (
     <section
       style={{
-        maxWidth: 1280,
-        margin: "-1px auto 0",
-        padding: "0 clamp(20px, 4vw, 40px)",
+        maxWidth: 1180,
+        margin: "clamp(-44px, -3vw, -24px) auto 0",
+        padding: "0 clamp(18px, 4vw, 40px)",
+        position: "relative",
+        zIndex: 2,
       }}
     >
       <form
         onSubmit={submit}
         style={{
-          border: "2px solid var(--color-divider)",
-          background: "var(--color-bg)",
-          padding: "32px clamp(20px, 3vw, 36px)",
+          border: "1px solid color-mix(in srgb, var(--color-text) 10%, transparent)",
+          borderRadius: "var(--radius-lg)",
+          background: "color-mix(in srgb, var(--color-bg) 86%, white)",
+          boxShadow: "var(--shadow-md)",
+          padding: "clamp(22px, 3vw, 34px)",
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: 20,
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+          gap: 16,
           alignItems: "end",
         }}
       >
@@ -57,17 +62,13 @@ export function RechercheRapide() {
             type="text"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Coconut, Baguida, Agoè…"
+            placeholder="Coconut, Baguida, Agoè..."
           />
         </label>
 
         <label className="field" style={{ display: "block" }}>
           <span style={labelStyle}>Type de bien</span>
-          <select
-            className="input"
-            value={type}
-            onChange={(e) => setType(e.target.value)}
-          >
+          <select className="input" value={type} onChange={(e) => setType(e.target.value)}>
             {TYPES.map((t) => (
               <option key={t} value={t}>
                 {t}
@@ -91,7 +92,7 @@ export function RechercheRapide() {
           </select>
         </label>
 
-        <button type="submit" className="btn btn-primary btn-block">
+        <button type="submit" className="btn btn-primary" style={{ minHeight: 43 }}>
           Rechercher
         </button>
       </form>

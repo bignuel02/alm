@@ -1,6 +1,6 @@
 "use client";
 
-import { useFavoris } from "@/components/favoris-provider";
+import { useFavoris } from "@/components/use-favoris";
 
 interface FavoriButtonProps {
   bienRef: string;
@@ -14,8 +14,8 @@ export function FavoriButton({
   className = "btn btn-ghost",
   compact = false,
 }: FavoriButtonProps) {
-  const { has, toggle, ready } = useFavoris();
-  const isFav = ready && has(bienRef);
+  const { has, toggle } = useFavoris();
+  const isFav = has(bienRef);
 
   const label = compact
     ? "Retirer"

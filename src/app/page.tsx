@@ -9,130 +9,175 @@ import { countBiens, listFeatured } from "@/lib/repository";
 const CHIFFRES = [
   { valeur: "184", legende: "Transactions accompagnées en 2025" },
   { valeur: "42j", legende: "Délai moyen de vente" },
-  { valeur: "98%", legende: "Du prix d’estimation obtenu" },
+  { valeur: "98%", legende: "Du prix d'estimation obtenu" },
   { valeur: "17", legende: "Années sur le marché de Lomé" },
 ] as const;
 
 const SHELL = {
   maxWidth: 1280,
   margin: "0 auto",
-  padding: "clamp(72px, 8vw, 120px) clamp(20px, 4vw, 40px)",
+  padding: "clamp(72px, 8vw, 120px) clamp(18px, 4vw, 40px)",
 } as const;
+
+const kicker: React.CSSProperties = {
+  display: "block",
+  fontSize: 11,
+  fontWeight: 800,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "var(--color-gold)",
+};
 
 export default async function AccueilPage() {
   const [featured, total] = await Promise.all([listFeatured(), countBiens()]);
 
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section
-        style={{ background: "var(--color-accent-900)", color: "var(--color-bg)" }}
+        style={{
+          minHeight: "min(760px, calc(100svh - 72px))",
+          background: "var(--color-accent-900)",
+          color: "var(--color-bg)",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
+        <div className="grayscale-photo absolute inset-0 opacity-55">
+          <ImageSlot
+            src="/agency-villa.jpg"
+            alt="Villa d'architecture entourée de jardin"
+            fill
+            priority
+          />
+        </div>
         <div
           style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(90deg, color-mix(in srgb, var(--color-accent-900) 95%, transparent) 0%, color-mix(in srgb, var(--color-accent-900) 72%, transparent) 48%, color-mix(in srgb, var(--color-accent-900) 20%, transparent) 100%)",
+          }}
+        />
+
+        <div
+          style={{
+            ...SHELL,
+            position: "relative",
+            minHeight: "inherit",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
-            alignItems: "stretch",
+            alignContent: "center",
+            paddingTop: "clamp(84px, 10vw, 140px)",
+            paddingBottom: "clamp(120px, 13vw, 180px)",
           }}
         >
-          <div style={{ padding: "clamp(64px, 8vw, 128px) clamp(24px, 5vw, 88px)" }}>
-            <span
+          <span style={{ ...kicker, marginBottom: 28 }}>Agence immobilière à Coconut</span>
+          <h1
+            style={{
+              maxWidth: "920px",
+              fontSize: "clamp(54px, 8vw, 118px)",
+              lineHeight: 0.96,
+              margin: "0 0 30px",
+            }}
+          >
+            L&apos;immobilier à Lomé, traité avec calme et précision.
+          </h1>
+          <p
+            style={{
+              maxWidth: "56ch",
+              fontSize: "clamp(17px, 1.6vw, 21px)",
+              lineHeight: 1.7,
+              margin: "0 0 38px",
+              color: "color-mix(in srgb, var(--color-bg) 82%, transparent)",
+            }}
+          >
+            {AGENCE.tagline}
+          </p>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+            <Link href="/biens" className="btn btn-primary">
+              {AGENCE.ctaLabel}
+            </Link>
+            <Link
+              href="/estimation"
+              className="btn btn-secondary"
               style={{
-                display: "block",
-                fontSize: 11.5,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: "var(--color-accent-300)",
-                marginBottom: 40,
+                color: "var(--color-bg)",
+                background: "color-mix(in srgb, var(--color-bg) 9%, transparent)",
+                borderColor: "color-mix(in srgb, var(--color-bg) 26%, transparent)",
               }}
             >
-              Agence immobilière — Coconut, Lomé
-            </span>
-
-            <h1
-              style={{
-                fontWeight: 300,
-                fontSize: "clamp(52px, 6.6vw, 104px)",
-                lineHeight: 1.02,
-                letterSpacing: "-0.005em",
-                margin: "0 0 36px",
-              }}
-            >
-              <span style={{ display: "block" }}>Des biens choisis.</span>
-              <span
-                style={{
-                  display: "block",
-                  fontStyle: "italic",
-                  color: "var(--color-accent-300)",
-                }}
-              >
-                Des conseils tenus.
-              </span>
-            </h1>
-
-            <p
-              style={{
-                fontSize: 17,
-                fontWeight: 300,
-                lineHeight: 1.7,
-                maxWidth: "46ch",
-                margin: "0 0 44px",
-                color: "color-mix(in srgb, var(--color-bg) 80%, transparent)",
-              }}
-            >
-              {AGENCE.tagline}
-            </p>
-
-            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <Link href="/biens" className="btn btn-primary">
-                {AGENCE.ctaLabel}
-              </Link>
-              <Link
-                href="/estimation"
-                className="btn btn-ghost"
-                style={{
-                  color: "var(--color-bg)",
-                  borderColor: "color-mix(in srgb, var(--color-bg) 55%, transparent)",
-                }}
-              >
-                Estimer mon bien
-              </Link>
-            </div>
-          </div>
-
-          <div className="grayscale-photo relative" style={{ minHeight: 540 }}>
-            <ImageSlot fill priority placeholder="Photo d’immeuble ou de façade" />
+              Estimer mon bien
+            </Link>
           </div>
         </div>
       </section>
 
       <RechercheRapide />
 
-      {/* ── Chiffres ──────────────────────────────────────────────────── */}
       <section
         style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "clamp(64px, 7vw, 104px) clamp(20px, 4vw, 40px)",
+          ...SHELL,
+          paddingTop: "clamp(72px, 8vw, 112px)",
+          paddingBottom: "clamp(48px, 6vw, 76px)",
         }}
       >
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-            gap: 32,
+            gridTemplateColumns: "minmax(260px, 0.9fr) minmax(280px, 1.4fr)",
+            gap: "clamp(36px, 6vw, 90px)",
+            alignItems: "end",
+          }}
+        >
+          <div>
+            <span style={{ ...kicker, marginBottom: 22 }}>Maison indépendante</span>
+            <h2 style={{ fontSize: "clamp(34px, 4.6vw, 64px)", lineHeight: 1 }}>
+              Peu de mandats. Des dossiers connus par coeur.
+            </h2>
+          </div>
+          <p
+            style={{
+              margin: 0,
+              fontSize: "clamp(16px, 1.4vw, 19px)",
+              color: "color-mix(in srgb, var(--color-text) 74%, transparent)",
+            }}
+          >
+            Chaque bien publié a été visité, documenté et repositionné au prix du
+            marché réel. L&apos;agence privilégie la justesse au volume, avec un
+            interlocuteur qui suit le dossier jusqu&apos;à la signature.
+          </p>
+        </div>
+      </section>
+
+      <section
+        style={{
+          maxWidth: 1280,
+          margin: "0 auto",
+          padding: "0 clamp(18px, 4vw, 40px)",
+        }}
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
+            borderTop: "1px solid var(--color-divider)",
+            borderBottom: "1px solid var(--color-divider)",
           }}
         >
           {CHIFFRES.map((c) => (
-            <div key={c.legende}>
+            <div
+              key={c.legende}
+              style={{
+                padding: "clamp(22px, 3vw, 34px)",
+                borderRight: "1px solid var(--color-divider)",
+              }}
+            >
               <p
                 style={{
                   fontFamily: "var(--font-heading)",
-                  fontWeight: 300,
-                  fontSize: "clamp(34px, 3.6vw, 52px)",
-                  lineHeight: 1.05,
+                  fontSize: "clamp(38px, 4vw, 58px)",
+                  lineHeight: 1,
                   color: "var(--color-accent)",
-                  margin: "0 0 12px",
+                  margin: "0 0 10px",
                 }}
               >
                 {c.valeur}
@@ -140,9 +185,10 @@ export default async function AccueilPage() {
               <p
                 style={{
                   fontSize: 11.5,
-                  letterSpacing: "0.2em",
+                  fontWeight: 800,
+                  letterSpacing: "0.13em",
                   textTransform: "uppercase",
-                  color: "color-mix(in srgb, var(--color-text) 70%, transparent)",
+                  color: "color-mix(in srgb, var(--color-text) 62%, transparent)",
                   margin: 0,
                 }}
               >
@@ -153,28 +199,29 @@ export default async function AccueilPage() {
         </div>
       </section>
 
-      <hr className="hr" style={{ maxWidth: 1280, margin: "0 auto" }} />
-
-      {/* ── Sélection du moment ───────────────────────────────────────── */}
-      <section style={{ ...SHELL, paddingBottom: 24 }}>
+      <section style={{ ...SHELL, paddingBottom: 28 }}>
         <div
           style={{
             display: "flex",
-            alignItems: "baseline",
+            alignItems: "end",
             justifyContent: "space-between",
             gap: 24,
             flexWrap: "wrap",
-            marginBottom: 32,
+            marginBottom: 34,
           }}
         >
-          <h2 style={{ fontSize: "clamp(32px, 3.4vw, 48px)", lineHeight: 1.1, margin: 0 }}>
-            Sélection du moment
-          </h2>
+          <div>
+            <span style={{ ...kicker, marginBottom: 16 }}>Sélection privée</span>
+            <h2 style={{ fontSize: "clamp(36px, 4.2vw, 60px)", lineHeight: 1, margin: 0 }}>
+              Biens choisis du moment
+            </h2>
+          </div>
           <Link
             href="/biens"
             style={{
               fontSize: 11.5,
-              letterSpacing: "0.18em",
+              fontWeight: 800,
+              letterSpacing: "0.15em",
               textTransform: "uppercase",
             }}
           >
@@ -185,8 +232,8 @@ export default async function AccueilPage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(420px, 1fr))",
-            gap: "clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px)",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 360px), 1fr))",
+            gap: "clamp(22px, 3vw, 38px)",
           }}
         >
           {featured.map((bien) => (
@@ -195,105 +242,121 @@ export default async function AccueilPage() {
         </div>
       </section>
 
-      {/* ── Nos expertises ────────────────────────────────────────────── */}
-      <section style={SHELL}>
-        <span
-          style={{
-            display: "block",
-            fontSize: 11.5,
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            color: "var(--color-accent-700)",
-            marginBottom: 32,
-          }}
-        >
-          Nos expertises
-        </span>
+      <section
+        style={{
+          ...SHELL,
+          display: "grid",
+          gridTemplateColumns: "minmax(280px, 0.8fr) minmax(300px, 1.2fr)",
+          gap: "clamp(36px, 6vw, 86px)",
+          alignItems: "start",
+        }}
+      >
+        <div>
+          <span style={{ ...kicker, marginBottom: 18 }}>Nos expertises</span>
+          <h2 style={{ fontSize: "clamp(34px, 4vw, 58px)", lineHeight: 1.04 }}>
+            Une pratique sobre, des preuves solides.
+          </h2>
+        </div>
 
-        {EXPERTISES.map((e) => (
-          <div
-            key={e.num}
-            style={{
-              display: "grid",
-              gridTemplateColumns:
-                "minmax(48px, 100px) minmax(220px, 360px) minmax(240px, 1fr)",
-              gap: "20px 56px",
-              alignItems: "baseline",
-              padding: "28px 0",
-              borderTop: "2px solid var(--color-divider)",
-            }}
-          >
-            <p style={{ fontFamily: "var(--font-heading)", fontSize: 15, margin: 0 }}>
-              {e.num}
-            </p>
-            <h3 style={{ fontSize: 28, lineHeight: 1.2, margin: 0 }}>{e.titre}</h3>
-            <p
+        <div>
+          {EXPERTISES.map((e) => (
+            <div
+              key={e.num}
               style={{
-                fontSize: 15.5,
-                margin: 0,
-                maxWidth: "56ch",
-                color: "color-mix(in srgb, var(--color-text) 78%, transparent)",
+                display: "grid",
+                gridTemplateColumns: "56px 1fr",
+                gap: "18px 30px",
+                padding: "26px 0",
+                borderTop: "1px solid var(--color-divider)",
               }}
             >
-              {e.texte}
-            </p>
-          </div>
-        ))}
+              <p
+                style={{
+                  fontFamily: "var(--font-heading)",
+                  fontSize: 22,
+                  color: "var(--color-gold)",
+                  margin: 0,
+                }}
+              >
+                {e.num}
+              </p>
+              <div>
+                <h3 style={{ fontSize: "clamp(24px, 2.4vw, 34px)", lineHeight: 1.12 }}>
+                  {e.titre}
+                </h3>
+                <p
+                  style={{
+                    fontSize: 15.5,
+                    margin: 0,
+                    maxWidth: "62ch",
+                    color: "color-mix(in srgb, var(--color-text) 72%, transparent)",
+                  }}
+                >
+                  {e.texte}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* ── Équipe + estimation ───────────────────────────────────────── */}
       <section
         style={{
           maxWidth: 1280,
           margin: "0 auto",
-          padding: "24px clamp(20px, 4vw, 40px) clamp(80px, 8vw, 120px)",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-          gap: 56,
-          alignItems: "center",
+          padding: "0 clamp(18px, 4vw, 40px) clamp(80px, 8vw, 120px)",
         }}
       >
-        <div>
-          <h2 style={{ fontSize: "clamp(30px, 3vw, 42px)", lineHeight: 1.12 }}>
-            Cinq négociateurs, un seul dossier à la fois
-          </h2>
-          <p
-            style={{
-              fontSize: 15.5,
-              maxWidth: "52ch",
-              color: "color-mix(in srgb, var(--color-text) 78%, transparent)",
-            }}
-          >
-            Le négociateur qui signe le mandat vous suit jusqu’à l’acte. Pas de
-            transmission de dossier en cours de route, pas de standard à
-            rappeler.
-          </p>
-          <Link href="/agence" className="btn btn-ghost">
-            Découvrir l’équipe
-          </Link>
-        </div>
-
         <div
           style={{
-            border: "2px solid var(--color-divider)",
-            padding: "clamp(28px, 3vw, 44px)",
+            display: "grid",
+            gridTemplateColumns: "minmax(280px, 0.95fr) minmax(280px, 1.05fr)",
+            borderRadius: "var(--radius-lg)",
+            overflow: "hidden",
+            background: "var(--color-accent-900)",
+            color: "var(--color-bg)",
+            boxShadow: "var(--shadow-lg)",
           }}
         >
-          <h3 style={{ fontSize: 26, lineHeight: 1.2 }}>
-            Combien vaut votre bien ? Réponse en 48 heures.
-          </h3>
-          <p
-            style={{
-              fontSize: 15,
-              color: "color-mix(in srgb, var(--color-text) 78%, transparent)",
-            }}
-          >
-            45 minutes sur place, un rapport écrit avec les biens comparables
-            qui justifient la fourchette. Sans engagement de mandat.
-          </p>
-          <Link href="/estimation" className="btn btn-ghost">
-            Demander une estimation gratuite
-          </Link>
+          <div className="relative min-h-[360px] grayscale-photo">
+            <ImageSlot
+              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85"
+              alt="Salon contemporain avec mobilier haut de gamme"
+              fill
+            />
+          </div>
+          <div style={{ padding: "clamp(34px, 5vw, 68px)" }}>
+            <span style={{ ...kicker, marginBottom: 20 }}>Estimation sous 48 h</span>
+            <h2 style={{ fontSize: "clamp(34px, 4.5vw, 64px)", lineHeight: 1 }}>
+              Combien vaut votre bien sur le marché réel ?
+            </h2>
+            <p
+              style={{
+                maxWidth: "52ch",
+                color: "color-mix(in srgb, var(--color-bg) 78%, transparent)",
+                margin: "18px 0 30px",
+              }}
+            >
+              45 minutes sur place, un rapport écrit, des comparables défendables
+              et une stratégie de prix claire. Sans engagement de mandat.
+            </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <Link href="/estimation" className="btn btn-primary">
+                Demander une estimation
+              </Link>
+              <Link
+                href="/agence"
+                className="btn btn-secondary"
+                style={{
+                  color: "var(--color-bg)",
+                  background: "transparent",
+                  borderColor: "color-mix(in srgb, var(--color-bg) 24%, transparent)",
+                }}
+              >
+                Découvrir l&apos;agence
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
