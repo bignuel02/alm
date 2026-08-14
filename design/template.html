@@ -1,0 +1,1423 @@
+
+<helmet>
+<style>/* Modernist — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("c359307f-2365-477d-acd8-73872ae28402") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("24011e00-593c-486d-91a5-e0f7799964f3") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("60e6d122-2b2a-471c-a880-378efe23b59a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("c359307f-2365-477d-acd8-73872ae28402") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("24011e00-593c-486d-91a5-e0f7799964f3") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("60e6d122-2b2a-471c-a880-378efe23b59a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("c359307f-2365-477d-acd8-73872ae28402") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("24011e00-593c-486d-91a5-e0f7799964f3") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("60e6d122-2b2a-471c-a880-378efe23b59a") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-accent: #ec3013;
+  --color-accent-2: #e15b47;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
+
+  --color-accent-100: #fff2ef;
+  --color-accent-200: #ffe0d9;
+  --color-accent-300: #ffc4b8;
+  --color-accent-400: #ff9783;
+  --color-accent-500: #ff563c;
+  --color-accent-600: #dd2b0f;
+  --color-accent-700: #ae1800;
+  --color-accent-800: #7c1405;
+  --color-accent-900: #4d170e;
+
+  --color-accent-2-100: #fff2ef;
+  --color-accent-2-200: #ffe0da;
+  --color-accent-2-300: #ffc4b9;
+  --color-accent-2-400: #ff9784;
+  --color-accent-2-500: #ef6853;
+  --color-accent-2-600: #c94b39;
+  --color-accent-2-700: #9e3526;
+  --color-accent-2-800: #71261b;
+  --color-accent-2-900: #471d16;
+
+  --font-heading: "Archivo", system-ui, sans-serif;
+  --font-heading-weight: 800;
+  --font-body: "Archivo", system-ui, sans-serif;
+
+  --space-1: 4.0px;
+  --space-2: 8.0px;
+  --space-3: 12.0px;
+  --space-4: 16.0px;
+  --space-6: 24.0px;
+  --space-8: 32.0px;
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.grayscale{filter:grayscale(1) contrast(1.08)}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 2px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); justify-content: flex-start; text-align: left; }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid var(--color-divider);
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 2px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-divider);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+</style>
+<script src="d235661e-219d-484a-9556-4aeacb010ad9"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("f00db6ba-dcb6-47b7-8791-29fb355acc90") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("66dbe3cb-091f-4527-9792-67bd81e4e01c") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("24e2e5c9-b8f6-4dc7-b87a-7963bdae92ef") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("f69828f2-be6e-48f1-be53-cd789c139935") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("cb6aee99-37a6-4388-b42e-f2dbf6f34b4c") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f00db6ba-dcb6-47b7-8791-29fb355acc90") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("66dbe3cb-091f-4527-9792-67bd81e4e01c") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("24e2e5c9-b8f6-4dc7-b87a-7963bdae92ef") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("f69828f2-be6e-48f1-be53-cd789c139935") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("cb6aee99-37a6-4388-b42e-f2dbf6f34b4c") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("4ecfae75-b00f-473f-8b3a-680b0f29d86f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("c777187f-4a8b-412a-a1bc-df2fba9f7ae5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("26dca3d5-81c3-48ac-a220-897797b0dc39") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("b2807c4c-01cb-45c1-9fa4-742736eda68a") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("acc6d29c-9f63-4fce-8b17-8d273c67d9f7") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("4ecfae75-b00f-473f-8b3a-680b0f29d86f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("c777187f-4a8b-412a-a1bc-df2fba9f7ae5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("26dca3d5-81c3-48ac-a220-897797b0dc39") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("b2807c4c-01cb-45c1-9fa4-742736eda68a") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("acc6d29c-9f63-4fce-8b17-8d273c67d9f7") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("4ecfae75-b00f-473f-8b3a-680b0f29d86f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("c777187f-4a8b-412a-a1bc-df2fba9f7ae5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("26dca3d5-81c3-48ac-a220-897797b0dc39") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("b2807c4c-01cb-45c1-9fa4-742736eda68a") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("acc6d29c-9f63-4fce-8b17-8d273c67d9f7") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("4ecfae75-b00f-473f-8b3a-680b0f29d86f") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("c777187f-4a8b-412a-a1bc-df2fba9f7ae5") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("26dca3d5-81c3-48ac-a220-897797b0dc39") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("b2807c4c-01cb-45c1-9fa4-742736eda68a") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("acc6d29c-9f63-4fce-8b17-8d273c67d9f7") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("41a53236-2d8d-4927-8295-7123847f8481") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("6645bd4b-320a-4138-9bfa-e2301ffce15e") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("163d4342-16fd-4f99-be1a-a4e7ff3e1794") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("41a53236-2d8d-4927-8295-7123847f8481") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("6645bd4b-320a-4138-9bfa-e2301ffce15e") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("163d4342-16fd-4f99-be1a-a4e7ff3e1794") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("41a53236-2d8d-4927-8295-7123847f8481") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("6645bd4b-320a-4138-9bfa-e2301ffce15e") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("163d4342-16fd-4f99-be1a-a4e7ff3e1794") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<script src="60771a61-230a-42fc-954a-8343f5b01bdc"></script>
+<style>
+  [data-theme="bw"] {
+    --color-accent: #17191a;
+    --color-accent-100: #ececec; --color-accent-200: #d6d6d6; --color-accent-300: #b4b4b4;
+    --color-accent-400: #7c7c7c; --color-accent-500: #17191a; --color-accent-600: #101112;
+    --color-accent-700: #0b0c0c; --color-accent-800: #070808; --color-accent-900: #050505;
+    --color-accent-2: #17191a;
+    --color-accent-2-100: #ececec; --color-accent-2-200: #d6d6d6; --color-accent-2-300: #b4b4b4;
+    --color-accent-2-400: #7c7c7c; --color-accent-2-500: #17191a; --color-accent-2-600: #101112;
+    --color-accent-2-700: #0b0c0c; --color-accent-2-800: #070808; --color-accent-2-900: #050505;
+    --color-bg: #ffffff; --color-text: #101112; --color-divider: #101112;
+  }
+  [data-theme="green"] {
+    --color-accent: #0e6f5e;
+    --color-accent-100: #dfeeea; --color-accent-200: #bcdcd5; --color-accent-300: #93c6bc;
+    --color-accent-400: #4f9d8e; --color-accent-500: #0e6f5e; --color-accent-600: #0b5c4e;
+    --color-accent-700: #08483e; --color-accent-800: #063429; --color-accent-900: #04231c;
+    --color-accent-2: #0e6f5e;
+    --color-accent-2-100: #dfeeea; --color-accent-2-200: #bcdcd5; --color-accent-2-300: #93c6bc;
+    --color-accent-2-400: #4f9d8e; --color-accent-2-500: #0e6f5e; --color-accent-2-600: #0b5c4e;
+    --color-accent-2-700: #08483e; --color-accent-2-800: #063429; --color-accent-2-900: #04231c;
+  }
+  :root {
+    --font-heading: "Cormorant Garamond", "Times New Roman", serif;
+    --font-heading-weight: 400;
+    --font-body: "Jost", system-ui, sans-serif;
+    --color-accent: #0e6f5e;
+    --color-accent-100: #dfeeea; --color-accent-200: #bcdcd5; --color-accent-300: #93c6bc;
+    --color-accent-400: #4f9d8e; --color-accent-500: #0e6f5e; --color-accent-600: #0b5c4e;
+    --color-accent-700: #08483e; --color-accent-800: #063429; --color-accent-900: #04231c;
+    --color-accent-2: #0e6f5e;
+    --color-accent-2-100: #dfeeea; --color-accent-2-200: #bcdcd5; --color-accent-2-300: #93c6bc;
+    --color-accent-2-400: #4f9d8e; --color-accent-2-500: #0e6f5e; --color-accent-2-600: #0b5c4e;
+    --color-accent-2-700: #08483e; --color-accent-2-800: #063429; --color-accent-2-900: #04231c;
+  }
+  body { margin: 0; background: #ffffff; color: var(--color-text); text-wrap: pretty; font-family: "Jost", system-ui, sans-serif; font-weight: 300; }
+  h1, h2, h3, .nav-brand { font-family: "Cormorant Garamond", serif !important; font-weight: 400 !important; }
+  .btn, .tag, .input, .nav a { font-family: "Jost", system-ui, sans-serif; }
+  .nav a, .nav .btn { white-space: nowrap; }
+  .nav { flex-wrap: wrap; row-gap: 12px; }
+  .btn { letter-spacing: 0.04em; text-transform: uppercase; font-size: 12.5px; font-weight: 400; }
+  .tag { letter-spacing: 0.06em; text-transform: uppercase; font-size: 11px; }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  *:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" style="font-family: var(--font-body); font-size: 16.5px; line-height: 1.72; background: var(--color-bg); color: var(--color-text);">
+
+  <nav class="nav" style="position: sticky; top: 0; z-index: 20; background: var(--color-bg); border-bottom: 2px solid var(--color-divider); gap: 28px; padding-block: 20px;">
+    <span class="nav-brand" sc-camel-on-click="{{ goHome }}" style="cursor: pointer; font-size: 27px; letter-spacing: 0.16em;">ALASSANI</span>
+    <a sc-camel-on-click="{{ goBiens }}" style="cursor: pointer; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text);">Nos biens</a>
+    <a sc-camel-on-click="{{ goAgence }}" style="cursor: pointer; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text);">L’agence</a>
+    <a sc-camel-on-click="{{ goEstimation }}" style="cursor: pointer; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text);">Estimation</a>
+    <a sc-camel-on-click="{{ goContact }}" style="cursor: pointer; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-text);">Contact</a>
+    <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ goFavoris }}" style="margin-left: auto; font-size: 13px;">Favoris ({{ favCount }})</button>
+    <button type="button" class="btn btn-primary" sc-camel-on-click="{{ goContact }}" style="font-size: 13px;">Prendre rendez-vous</button>
+  </nav>
+
+  <!-- ACCUEIL -->
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+    <div>
+      <section style="background: var(--color-accent-900); color: var(--color-bg);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); align-items: stretch;">
+          <div style="padding: clamp(64px, 8vw, 128px) clamp(24px, 5vw, 88px);">
+            <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-300); margin-bottom: 40px;">Agence immobilière — Coconut, Lomé</span>
+            <h1 style="font-family: var(--font-heading); font-weight: 300; font-size: clamp(52px, 6.6vw, 104px); line-height: 1.02; letter-spacing: -0.005em; margin: 0 0 36px;">
+              <span style="display: block;">Des biens choisis.</span>
+              <span style="display: block; font-style: italic; color: var(--color-accent-300);">Des conseils tenus.</span>
+            </h1>
+            <p style="font-size: 17px; font-weight: 300; line-height: 1.7; max-width: 46ch; margin: 0 0 44px; color: color-mix(in srgb, var(--color-bg) 80%, transparent);">{{ tagline }}</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-primary" sc-camel-on-click="{{ goBiens }}">{{ ctaLabel }}</button>
+              <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ goEstimation }}" style="color: var(--color-bg); border-color: color-mix(in srgb, var(--color-bg) 55%, transparent);">Estimer mon bien</button>
+            </div>
+          </div>
+          <div class="grayscale" style="position: relative; min-height: 540px;">
+            <image-slot id="hero-alassani" shape="rect" fit="cover" src="{{ photoSrc }}" placeholder="Photo d’immeuble ou de façade" style="position: absolute; inset: 0; width: 100%; height: 100%;"></image-slot>
+          </div>
+        </div>
+      </section>
+
+      <section style="max-width: 1280px; margin: -1px auto 0; padding: 0 clamp(20px, 4vw, 40px);">
+        <div style="border: 2px solid var(--color-divider); background: var(--color-bg); padding: 32px clamp(20px, 3vw, 36px); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; align-items: end;">
+          <label class="field" style="display: block; position: relative">
+            <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Ville ou quartier</span>
+            <input class="input" type="text" value="{{ q }}" sc-camel-on-input="{{ onQuery }}" placeholder="Coconut, Baguida, Agoè…" style="width: 100%;">
+          <div style="font-size: 16px; line-height: 1; font-family: Archivo, system-ui, sans-serif; position: absolute; left: 133px; top: 45px">Your text here</div></label>
+          <label class="field" style="display: block;">
+            <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Type de bien</span>
+            <sc-raw-select class="input" value="{{ fType }}" sc-camel-on-change="{{ onType }}" style="width: 100%;">
+              <sc-for list="{{ types }}" as="t" hint-placeholder-count="4">
+                <option value="{{ t }}">{{ t }}</option>
+              </sc-for>
+            </sc-raw-select>
+          </label>
+          <label class="field" style="display: block;">
+            <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Budget maximum</span>
+            <sc-raw-select class="input" value="{{ fBudget }}" sc-camel-on-change="{{ onBudget }}" style="width: 100%;">
+              <sc-for list="{{ budgets }}" as="b" hint-placeholder-count="4">
+                <option value="{{ b.value }}">{{ b.label }}</option>
+              </sc-for>
+            </sc-raw-select>
+          </label>
+          <button type="button" class="btn btn-primary btn-block" sc-camel-on-click="{{ goBiens }}">Rechercher</button>
+        </div>
+      </section>
+
+      <section style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 7vw, 104px) clamp(20px, 4vw, 40px);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+          <div>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(34px, 3.6vw, 52px); font-weight: 300; line-height: 1.05; color: var(--color-accent); margin: 0 0 12px; margin-left: -0.018em;">184</p>
+            <p style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin: 0;">Transactions accompagnées en 2025</p>
+          </div>
+          <div>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(34px, 3.6vw, 52px); font-weight: 300; line-height: 1.05; color: var(--color-accent); margin: 0 0 12px; margin-left: -0.018em;">42j</p>
+            <p style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin: 0;">Délai moyen de vente</p>
+          </div>
+          <div>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(34px, 3.6vw, 52px); font-weight: 300; line-height: 1.05; color: var(--color-accent); margin: 0 0 12px; margin-left: -0.018em;">98%</p>
+            <p style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin: 0;">Du prix d’estimation obtenu</p>
+          </div>
+          <div>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(34px, 3.6vw, 52px); font-weight: 300; line-height: 1.05; color: var(--color-accent); margin: 0 0 12px; margin-left: -0.018em;">17</p>
+            <p style="font-size: 11.5px; letter-spacing: 0.2em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent); margin: 0;">Années sur le marché de Lomé</p>
+          </div>
+        </div>
+      </section>
+
+      <hr class="hr" style="max-width: 1280px; margin: 0 auto;">
+
+      <section style="max-width: 1280px; margin: 0 auto; padding: clamp(72px, 8vw, 120px) clamp(20px, 4vw, 40px) 24px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 32px;">
+          <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(32px, 3.4vw, 48px); line-height: 1.1; margin: 0;">Sélection du moment</h2>
+          <a sc-camel-on-click="{{ goBiens }}" style="cursor: pointer; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase;">Voir les {{ totalCount }} biens →</a>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px); background: transparent;">
+          <sc-for list="{{ featured }}" as="b" hint-placeholder-count="3">
+            <article style="background: var(--color-bg); display: flex; flex-direction: column;">
+              <div class="grayscale" style="position: relative;">
+                <image-slot id="{{ b.slotId }}" shape="rect" fit="cover" placeholder="Photo du bien" style="width: 100%; aspect-ratio: 4 / 3;"></image-slot>
+              </div>
+              <div style="padding: 24px 0 0; display: flex; gap: 8px; flex-wrap: wrap;">
+                <span class="tag tag-accent">{{ b.statut }}</span>
+                <span class="tag tag-outline">{{ b.type }}</span>
+              </div>
+              <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(26px, 2.1vw, 32px); line-height: 1.18; margin: 16px 0 10px;">{{ b.titre }}</h3>
+              <p style="margin: 0 0 20px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ b.ville }} · {{ b.surface }} m² · {{ b.pieces }} pièces</p>
+              <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 28px; margin: auto 0 20px; padding-top: 18px; border-top: 1px solid var(--color-divider);">{{ b.prixFmt }}</p>
+              <div style="display: flex; gap: 8px;">
+                <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ b.open }}">Voir le bien</button>
+                <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ b.toggleFav }}">{{ b.favLabel }}</button>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </section>
+
+      <section style="max-width: 1280px; margin: 0 auto; padding: clamp(72px, 8vw, 120px) clamp(20px, 4vw, 40px);">
+        <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 32px;">Nos expertises</span>
+        <sc-for list="{{ expertises }}" as="e" hint-placeholder-count="4">
+          <div style="display: grid; grid-template-columns: minmax(48px, 100px) minmax(220px, 360px) minmax(240px, 1fr); gap: 20px 56px; align-items: baseline; padding: 28px 0; border-top: 2px solid var(--color-divider);">
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 15px; margin: 0;">{{ e.num }}</p>
+            <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 28px; line-height: 1.2; margin: 0;">{{ e.titre }}</h3>
+            <p style="font-size: 15.5px; margin: 0; max-width: 56ch; color: color-mix(in srgb, var(--color-text) 78%, transparent);">{{ e.texte }}</p>
+          </div>
+        </sc-for>
+      </section>
+
+      <section style="max-width: 1280px; margin: 0 auto; padding: 24px clamp(20px, 4vw, 40px) clamp(80px, 8vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center;">
+        <div>
+          <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 28px;">L’agence</span>
+          <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(30px, 3vw, 42px); line-height: 1.12; margin: 0 0 24px;">Cinq négociateurs, un seul dossier à la fois</h2>
+          <p style="font-size: 15.5px; margin: 0 0 24px; max-width: 50ch; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Chaque mandat est suivi par le négociateur qui l’a signé, de la première visite à la signature chez le notaire. Nous limitons volontairement le nombre de biens en portefeuille pour tenir ce niveau de suivi.</p>
+          <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ goAgence }}">Découvrir l’équipe</button>
+        </div>
+        <figure class="grayscale" style="margin: 0;">
+          <image-slot id="agence-split" shape="rect" fit="cover" src="{{ photoSrc }}" placeholder="Photo de l’équipe ou de l’agence" style="width: 100%; aspect-ratio: 4 / 3;"></image-slot>
+        </figure>
+      </section>
+
+      <section style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px) clamp(80px, 8vw, 120px);">
+        <figure style="margin: 0; border-top: 2px solid var(--color-divider); padding-top: 48px;">
+          <blockquote style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(28px, 3.2vw, 46px); font-style: italic; font-weight: 300; line-height: 1.28; max-width: 34ch; margin: 0;">“Ils ont refusé deux offres que j’étais prêt à accepter. Ils avaient raison : la troisième était supérieure de 12 millions.”</blockquote>
+          <figcaption style="font-size: 15.5px; margin: 28px 0 0; color: color-mix(in srgb, var(--color-text) 70%, transparent);">— M. Adjaho, vendeur, Tokoin</figcaption>
+        </figure>
+      </section>
+
+      <section style="background: var(--color-accent); color: var(--color-bg);">
+        <div style="max-width: 1280px; margin: 0 auto; padding: clamp(80px, 9vw, 136px) clamp(20px, 4vw, 40px);">
+          <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(40px, 5vw, 76px); line-height: 1.04; letter-spacing: 0; margin: 0 0 32px; margin-left: -0.022em;">
+            <span style="display: block;">Combien vaut votre bien ?</span>
+            <span style="display: block;">Réponse en 48 heures.</span>
+          </h3>
+          <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ goEstimation }}" style="color: var(--color-bg); border-color: var(--color-bg);">Demander une estimation gratuite</button>
+        </div>
+      </section>
+    </div>
+  </sc-if>
+
+  <!-- LISTE DES BIENS -->
+  <sc-if value="{{ isBiens }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(20px, 4vw, 40px) clamp(72px, 8vw, 120px);">
+      <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 28px;">Biens disponibles</span>
+      <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(42px, 5.4vw, 82px); line-height: 1.04; letter-spacing: 0; margin: 0 0 32px; margin-left: -0.022em;">Le portefeuille</h1>
+
+      <div style="border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); padding: 24px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; align-items: end;">
+        <label class="field" style="display: block;">
+          <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Recherche</span>
+          <input class="input" type="text" value="{{ q }}" sc-camel-on-input="{{ onQuery }}" placeholder="Quartier, référence, mot-clé" style="width: 100%;">
+        </label>
+        <label class="field" style="display: block;">
+          <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Type</span>
+          <sc-raw-select class="input" value="{{ fType }}" sc-camel-on-change="{{ onType }}" style="width: 100%;">
+            <sc-for list="{{ types }}" as="t" hint-placeholder-count="4">
+              <option value="{{ t }}">{{ t }}</option>
+            </sc-for>
+          </sc-raw-select>
+        </label>
+        <label class="field" style="display: block;">
+          <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Transaction</span>
+          <sc-raw-select class="input" value="{{ fStatut }}" sc-camel-on-change="{{ onStatut }}" style="width: 100%;">
+            <sc-for list="{{ statuts }}" as="s" hint-placeholder-count="3">
+              <option value="{{ s }}">{{ s }}</option>
+            </sc-for>
+          </sc-raw-select>
+        </label>
+        <label class="field" style="display: block;">
+          <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Budget max</span>
+          <sc-raw-select class="input" value="{{ fBudget }}" sc-camel-on-change="{{ onBudget }}" style="width: 100%;">
+            <sc-for list="{{ budgets }}" as="b" hint-placeholder-count="4">
+              <option value="{{ b.value }}">{{ b.label }}</option>
+            </sc-for>
+          </sc-raw-select>
+        </label>
+        <label class="field" style="display: block;">
+          <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Tri</span>
+          <sc-raw-select class="input" value="{{ fSort }}" sc-camel-on-change="{{ onSort }}" style="width: 100%;">
+            <sc-for list="{{ sorts }}" as="s" hint-placeholder-count="3">
+              <option value="{{ s }}">{{ s }}</option>
+            </sc-for>
+          </sc-raw-select>
+        </label>
+      </div>
+
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 20px 0 28px;">
+        <p style="margin: 0; font-size: 14.5px; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ resultLabel }}</p>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ toggleFavOnly }}">{{ favOnlyLabel }}</button>
+          <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ resetFilters }}">Réinitialiser</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px); background: transparent;">
+        <sc-for list="{{ results }}" as="b" hint-placeholder-count="6">
+          <article style="background: var(--color-bg); display: flex; flex-direction: column;">
+            <div class="grayscale">
+              <image-slot id="{{ b.slotId }}" shape="rect" fit="cover" placeholder="Photo du bien" style="width: 100%; aspect-ratio: 4 / 3;"></image-slot>
+            </div>
+            <div style="padding: 24px 0 0; display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
+              <span class="tag tag-accent">{{ b.statut }}</span>
+              <span class="tag tag-outline">{{ b.type }}</span>
+              <sc-if value="{{ showDocs }}" hint-placeholder-val="{{ true }}">
+                <span class="tag tag-neutral">{{ b.badge }}</span>
+              </sc-if>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(26px, 2.1vw, 32px); line-height: 1.18; margin: 16px 0 10px;">{{ b.titre }}</h3>
+            <p style="margin: 0 0 20px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ b.ville }} · {{ b.surface }} m² · {{ b.pieces }} pièces · réf. {{ b.ref }}</p>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 28px; margin: auto 0 20px; padding-top: 18px; border-top: 1px solid var(--color-divider);">{{ b.prixFmt }}</p>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ b.open }}">Voir le bien</button>
+              <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ b.toggleFav }}">{{ b.favLabel }}</button>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+        <div style="border: 2px solid var(--color-divider); padding: 48px 32px;">
+          <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 24px; margin: 0 0 12px;">Aucun bien ne correspond</h3>
+          <p style="margin: 0 0 20px; font-size: 15.5px; color: color-mix(in srgb, var(--color-text) 78%, transparent);">Élargissez le budget ou le type de bien. Nous pouvons aussi vous alerter dès qu’un bien correspondant entre au portefeuille.</p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button type="button" class="btn btn-primary" sc-camel-on-click="{{ resetFilters }}">Voir tous les biens</button>
+            <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ goContact }}">Créer une alerte</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <!-- FICHE BIEN -->
+  <sc-if value="{{ isFiche }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 40px clamp(20px, 4vw, 40px) clamp(72px, 8vw, 120px);">
+      <a sc-camel-on-click="{{ goBiens }}" style="cursor: pointer; font-size: 11.5px; letter-spacing: 0.18em; text-transform: uppercase;">← Retour au portefeuille</a>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin: 32px 0 20px;">
+        <span class="tag tag-accent">{{ sel.statut }}</span>
+        <span class="tag tag-outline">{{ sel.type }}</span>
+        <span class="tag tag-neutral">réf. {{ sel.ref }}</span>
+      </div>
+      <div style="display: flex; align-items: end; justify-content: space-between; gap: 32px; flex-wrap: wrap; border-bottom: 2px solid var(--color-divider); padding-bottom: 28px;">
+        <div>
+          <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(38px, 4.4vw, 64px); line-height: 1.04; letter-spacing: 0; margin: 0 0 12px; margin-left: -0.022em; max-width: 24ch;">{{ sel.titre }}</h1>
+          <p style="margin: 0; font-size: 16px; color: color-mix(in srgb, var(--color-text) 75%, transparent);">{{ sel.ville }}</p>
+        </div>
+        <div style="text-align: left;">
+          <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 38px; line-height: 1; letter-spacing: 0; margin: 0 0 8px; color: var(--color-accent);">{{ sel.prixFmt }}</p>
+          <p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">{{ sel.prixNote }}</p>
+        </div>
+      </div>
+
+      <div class="grayscale" style="margin: 32px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px;">
+        <image-slot id="{{ sel.slotMain }}" shape="rect" fit="cover" placeholder="Photo principale" style="width: 100%; aspect-ratio: 16 / 10;"></image-slot>
+        <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 2px;">
+          <image-slot id="{{ sel.slotB }}" shape="rect" fit="cover" placeholder="Photo 2" style="width: 100%; height: 100%;"></image-slot>
+          <image-slot id="{{ sel.slotC }}" shape="rect" fit="cover" placeholder="Photo 3" style="width: 100%; height: 100%;"></image-slot>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start;">
+        <div>
+          <sc-raw-table class="table" style="width: 100%; margin-bottom: 40px;">
+            <sc-raw-tbody>
+              <sc-for list="{{ sel.specs }}" as="s" hint-placeholder-count="6">
+                <sc-raw-tr>
+                  <sc-raw-th style="text-align: left; width: 40%;">{{ s.k }}</sc-raw-th>
+                  <sc-raw-td>{{ s.v }}</sc-raw-td>
+                </sc-raw-tr>
+              </sc-for>
+            </sc-raw-tbody>
+          </sc-raw-table>
+
+          <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 32px; margin: 0 0 20px;">Description</h2>
+          <p style="font-size: 16.5px; margin: 0 0 32px; max-width: 62ch; color: color-mix(in srgb, var(--color-text) 84%, transparent);">{{ sel.description }}</p>
+
+          <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 32px; margin: 0 0 24px;">Prestations</h2>
+          <ul style="list-style: none; padding: 0; margin: 0 0 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 32px;">
+            <sc-for list="{{ sel.prestations }}" as="p" hint-placeholder-count="6">
+              <li style="display: flex; gap: 12px; align-items: baseline; font-size: 15.5px; border-bottom: 1px solid var(--color-divider); padding-bottom: 10px;">
+                <span style="width: 8px; height: 8px; background: var(--color-accent); flex: 0 0 auto;"></span>
+                <span>{{ p }}</span>
+              </li>
+            </sc-for>
+          </ul>
+
+          <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 32px; margin: 0 0 24px;">Dossier juridique</h2>
+          <div style="border-top: 2px solid var(--color-divider);">
+            <sc-for list="{{ sel.docsList }}" as="d" hint-placeholder-count="4">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 14px 0; border-bottom: 1px solid var(--color-divider);">
+                <span style="font-size: 15.5px;">{{ d.label }}</span>
+                <span class="{{ d.cls }}">{{ d.mark }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin: 16px 0 0; font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Chaque pièce est vérifiée à l’agence avant la mise en vente. Les documents originaux sont consultables sur place, en présence du vendeur ou du notaire.</p>
+        </div>
+
+        <aside style="border: 2px solid var(--color-divider); padding: 28px;">
+          <span style="display: block; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 20px;">Votre négociateur</span>
+          <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 24px;">
+            <div class="grayscale" style="flex: 0 0 auto;">
+              <image-slot id="{{ sel.agentSlot }}" shape="rect" fit="cover" placeholder="Portrait" style="width: 116px; height: 148px;"></image-slot>
+            </div>
+            <div>
+              <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 18px; margin: 0 0 4px;">{{ sel.agent }}</p>
+              <p style="margin: 0; font-size: 14px; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ sel.agentRole }}</p>
+              <p style="margin: 4px 0 0; font-size: 14px;">{{ phone }}</p>
+            </div>
+          </div>
+          <sc-if value="{{ visitSent }}" hint-placeholder-val="{{ false }}">
+            <div style="border: 2px solid var(--color-accent); padding: 20px;">
+              <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 18px; margin: 0 0 8px;">Demande envoyée</p>
+              <p style="margin: 0; font-size: 14.5px;">{{ sel.agent }} vous rappelle sous 24 h ouvrées pour fixer la visite.</p>
+            </div>
+          </sc-if>
+          <sc-if value="{{ visitOpen }}" hint-placeholder-val="{{ true }}">
+            <form sc-camel-on-submit="{{ onVisitSubmit }}" style="display: grid; gap: 16px;">
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Nom</span>
+                <input class="input" type="text" required="{{ true }}" style="width: 100%;">
+              </label>
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Téléphone</span>
+                <input class="input" type="tel" required="{{ true }}" style="width: 100%;">
+              </label>
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Créneau souhaité</span>
+                <input class="input" type="text" placeholder="Samedi matin, en semaine après 17 h…" style="width: 100%;">
+              </label>
+              <button type="submit" class="btn btn-primary btn-block">Demander une visite</button>
+              <button type="button" class="btn btn-ghost btn-block" sc-camel-on-click="{{ toggleSelFav }}">{{ selFavLabel }}</button>
+            </form>
+          </sc-if>
+        </aside>
+      </div>
+
+      <div style="border-top: 2px solid var(--color-divider); margin-top: 64px; padding-top: 40px;">
+        <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 32px; margin: 0 0 32px;">Biens similaires</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px); background: transparent;">
+          <sc-for list="{{ similar }}" as="b" hint-placeholder-count="3">
+            <article style="background: var(--color-bg);">
+              <div class="grayscale">
+                <image-slot id="{{ b.slotId }}" shape="rect" fit="cover" placeholder="Photo du bien" style="width: 100%; aspect-ratio: 4 / 3;"></image-slot>
+              </div>
+              <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; line-height: 1.18; margin: 20px 0 10px;">{{ b.titre }}</h3>
+              <p style="margin: 0 0 20px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ b.ville }} · {{ b.prixFmt }}</p>
+              <div>
+                <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ b.open }}">Voir le bien</button>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- AGENCE -->
+  <sc-if value="{{ isAgence }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(20px, 4vw, 40px) clamp(72px, 8vw, 120px);">
+      <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 28px;">L’agence</span>
+      <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(42px, 5.4vw, 82px); line-height: 1.04; letter-spacing: 0; margin: 0 0 28px; margin-left: -0.022em; max-width: 26ch;">Un portefeuille court, tenu de près</h1>
+      <p style="font-size: 17.5px; max-width: 58ch; margin: 0 0 48px; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Alassani Immobilier a été fondée en 2009 dans le quartier Coconut. Nous travaillons sur le Grand Lomé, de Bè à Baguida et jusqu’à Agoè, en vente comme en location, avec une règle simple : ne prendre que les mandats que nous pouvons défendre.</p>
+
+      <div class="grayscale" style="margin-bottom: 56px;">
+        <image-slot id="agence-hero" shape="rect" fit="cover" src="{{ photoSrc }}" placeholder="Photo de la façade ou des bureaux" style="width: 100%; aspect-ratio: 21 / 9;"></image-slot>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; border-top: 2px solid var(--color-divider); padding-top: 40px; margin-bottom: 64px;">
+        <sc-for list="{{ valeurs }}" as="v" hint-placeholder-count="3">
+          <div>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 15px; margin: 0 0 16px; color: var(--color-accent-700);">{{ v.num }}</p>
+            <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 22px; line-height: 1.2; margin: 0 0 12px;">{{ v.titre }}</h3>
+            <p style="font-size: 15.5px; margin: 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">{{ v.texte }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(30px, 3vw, 42px); margin: 0 0 40px;">L’équipe</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+        <sc-for list="{{ equipe }}" as="m" hint-placeholder-count="4">
+          <div>
+            <div class="grayscale" style="margin-bottom: 16px;">
+              <image-slot id="{{ m.slot }}" shape="rect" fit="cover" placeholder="Portrait" style="width: 100%; aspect-ratio: 4 / 5;"></image-slot>
+            </div>
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 19px; margin: 0 0 4px;">{{ m.nom }}</p>
+            <p style="margin: 0 0 10px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-accent-700);">{{ m.role }}</p>
+            <p style="margin: 0; font-size: 14.5px; color: color-mix(in srgb, var(--color-text) 75%, transparent);">{{ m.note }}</p>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="border-top: 2px solid var(--color-divider); margin-top: 64px; padding-top: 40px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <button type="button" class="btn btn-primary" sc-camel-on-click="{{ goEstimation }}">Confier un bien à l’agence</button>
+        <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ goBiens }}">Voir le portefeuille</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- ESTIMATION -->
+  <sc-if value="{{ isEstimation }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(20px, 4vw, 40px) clamp(72px, 8vw, 120px); display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 64px; align-items: start;">
+      <div>
+        <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 28px;">Estimation</span>
+        <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(40px, 4.6vw, 68px); line-height: 1.04; letter-spacing: 0; margin: 0 0 24px; margin-left: -0.022em;">Le prix juste, argumenté</h1>
+        <p style="font-size: 16.5px; margin: 0 0 32px; max-width: 48ch; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Nous croisons les transactions réelles de votre quartier, l’état du bien, son dossier foncier et la demande du moment. Vous recevez une fourchette écrite, avec les biens comparables qui la justifient.</p>
+        <sc-for list="{{ etapes }}" as="e" hint-placeholder-count="3">
+          <div style="display: grid; grid-template-columns: 48px 1fr; gap: 20px; padding: 24px 0; border-top: 2px solid var(--color-divider);">
+            <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 15px; margin: 0;">{{ e.num }}</p>
+            <div>
+              <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; margin: 0 0 8px;">{{ e.titre }}</h3>
+              <p style="font-size: 15px; margin: 0; color: color-mix(in srgb, var(--color-text) 78%, transparent);">{{ e.texte }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="border: 2px solid var(--color-divider); padding: 36px;">
+        <sc-if value="{{ estSent }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; margin: 0 0 12px;">Demande enregistrée</h2>
+            <p style="font-size: 15.5px; margin: 0 0 24px; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Un négociateur vous appelle sous 48 heures pour convenir de la visite d’estimation. Aucun engagement de mandat.</p>
+            <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ resetEst }}">Envoyer une autre demande</button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ estOpen }}" hint-placeholder-val="{{ true }}">
+          <form sc-camel-on-submit="{{ onEstSubmit }}" style="display: grid; gap: 20px;">
+            <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; margin: 0;">Estimation gratuite</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Nom</span>
+                <input class="input" type="text" required="{{ true }}" style="width: 100%;">
+              </label>
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Téléphone</span>
+                <input class="input" type="tel" required="{{ true }}" style="width: 100%;">
+              </label>
+            </div>
+            <label class="field" style="display: block;">
+              <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Adresse du bien</span>
+              <input class="input" type="text" required="{{ true }}" placeholder="Rue des Cocotiers, Coconut, Lomé" style="width: 100%;">
+            </label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Type</span>
+                <sc-raw-select class="input" style="width: 100%;">
+                  <option>Villa</option>
+                  <option>Maison</option>
+                  <option>Appartement</option>
+                  <option>Immeuble de rapport</option>
+                  <option>Local commercial</option>
+                  <option>Terrain</option>
+                </sc-raw-select>
+              </label>
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Surface m²</span>
+                <input class="input" type="number" style="width: 100%;">
+              </label>
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Pièces</span>
+                <input class="input" type="number" style="width: 100%;">
+              </label>
+            </div>
+            <label class="field" style="display: block;">
+              <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Projet</span>
+              <sc-raw-select class="input" style="width: 100%;">
+                <option>Vendre dans les 3 mois</option>
+                <option>Vendre dans l’année</option>
+                <option>Mettre en location</option>
+                <option>Simple curiosité</option>
+              </sc-raw-select>
+            </label>
+            <label class="field" style="display: block;">
+              <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Précisions</span>
+              <textarea class="input" rows="4" placeholder="Titre foncier, travaux récents, forage, groupe…" style="width: 100%;"></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary btn-block">Envoyer la demande</button>
+            <p style="margin: 0; font-size: 13px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">Vos données servent uniquement à traiter cette demande.</p>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- CONTACT -->
+  <sc-if value="{{ isContact }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(20px, 4vw, 40px) clamp(72px, 8vw, 120px);">
+      <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 28px;">Contact</span>
+      <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(42px, 5.4vw, 82px); line-height: 1.04; letter-spacing: 0; margin: 0 0 48px; margin-left: -0.022em;">Passez à l’agence</h1>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: start;">
+        <div>
+          <div style="border-top: 2px solid var(--color-divider); padding: 24px 0;">
+            <p style="margin: 0 0 8px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Adresse</p>
+            <p style="margin: 0; font-size: 17px;">Rue des Cocotiers, quartier Coconut<br>Lomé — Togo</p>
+          </div>
+          <div style="border-top: 2px solid var(--color-divider); padding: 24px 0;">
+            <p style="margin: 0 0 8px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Téléphone</p>
+            <p style="margin: 0; font-size: 17px;">{{ phone }}</p>
+          </div>
+          <div style="border-top: 2px solid var(--color-divider); padding: 24px 0;">
+            <p style="margin: 0 0 8px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">E-mail</p>
+            <p style="margin: 0; font-size: 17px;">contact@alassani-immobilier.tg</p>
+          </div>
+          <div style="border-top: 2px solid var(--color-divider); border-bottom: 2px solid var(--color-divider); padding: 24px 0;">
+            <p style="margin: 0 0 8px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Horaires</p>
+            <p style="margin: 0; font-size: 17px;">Lundi – vendredi, 8 h – 18 h<br>Samedi, 9 h – 13 h</p>
+          </div>
+          <div style="border: 2px solid #141b18; background: var(--color-accent-900); color: var(--color-bg); padding: 28px; margin-top: 32px;">
+            <p style="font-family: var(--font-heading); font-size: 26px; margin: 0 0 10px;">Parler à un négociateur maintenant</p>
+            <p style="margin: 0 0 20px; font-size: 15px; font-weight: 300; color: color-mix(in srgb, var(--color-bg) 80%, transparent);">Un négociateur répond en direct du lundi au samedi, de 8 h à 18 h. En dehors de ces heures, laissez votre message : la réponse arrive à l’ouverture.</p>
+            <button type="button" class="btn btn-primary" sc-camel-on-click="{{ openChat }}">Ouvrir le chat</button>
+          </div>
+          <div class="grayscale" style="margin-top: 32px;">
+            <image-slot id="contact-plan" shape="rect" fit="cover" placeholder="Plan ou photo de la vitrine" style="width: 100%; aspect-ratio: 4 / 3;"></image-slot>
+          </div>
+        </div>
+
+        <div style="border: 2px solid var(--color-divider); padding: 36px;">
+          <sc-if value="{{ msgSent }}" hint-placeholder-val="{{ false }}">
+            <div>
+              <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; margin: 0 0 12px;">Message envoyé</h2>
+              <p style="font-size: 15.5px; margin: 0 0 24px; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Nous répondons dans la journée pendant les heures d’ouverture.</p>
+              <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ resetMsg }}">Écrire un autre message</button>
+            </div>
+          </sc-if>
+          <sc-if value="{{ msgOpen }}" hint-placeholder-val="{{ true }}">
+            <form sc-camel-on-submit="{{ onMsgSubmit }}" style="display: grid; gap: 20px;">
+              <h2 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; margin: 0;">Nous écrire</h2>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <label class="field" style="display: block;">
+                  <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Nom</span>
+                  <input class="input" type="text" required="{{ true }}" style="width: 100%;">
+                </label>
+                <label class="field" style="display: block;">
+                  <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">E-mail</span>
+                  <input class="input" type="email" required="{{ true }}" style="width: 100%;">
+                </label>
+              </div>
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Objet</span>
+                <sc-raw-select class="input" style="width: 100%;">
+                  <option>Visiter un bien</option>
+                  <option>Vendre un bien</option>
+                  <option>Louer un bien</option>
+                  <option>Gestion locative</option>
+                  <option>Autre demande</option>
+                </sc-raw-select>
+              </label>
+              <label class="field" style="display: block;">
+                <span style="display: block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px;">Message</span>
+                <textarea class="input" rows="6" required="{{ true }}" style="width: 100%;"></textarea>
+              </label>
+              <button type="submit" class="btn btn-primary btn-block">Envoyer</button>
+            </form>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <!-- FAVORIS -->
+  <sc-if value="{{ isFavoris }}" hint-placeholder-val="{{ false }}">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 104px) clamp(20px, 4vw, 40px) clamp(72px, 8vw, 120px);">
+      <span style="display: block; font-size: 11.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: 28px;">Sélection</span>
+      <h1 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: clamp(42px, 5.4vw, 82px); line-height: 1.04; letter-spacing: 0; margin: 0 0 40px; margin-left: -0.022em;">Vos favoris</h1>
+      <sc-if value="{{ hasFavs }}" hint-placeholder-val="{{ true }}">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px); background: transparent;">
+          <sc-for list="{{ favs }}" as="b" hint-placeholder-count="2">
+            <article style="background: var(--color-bg);">
+              <div class="grayscale">
+                <image-slot id="{{ b.slotId }}" shape="rect" fit="cover" placeholder="Photo du bien" style="width: 100%; aspect-ratio: 4 / 3;"></image-slot>
+              </div>
+              <h3 style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 26px; line-height: 1.18; margin: 20px 0 10px;">{{ b.titre }}</h3>
+              <p style="margin: 0 0 20px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ b.ville }} · {{ b.prixFmt }}</p>
+              <div style="display: flex; gap: 8px;">
+                <button type="button" class="btn btn-secondary" sc-camel-on-click="{{ b.open }}">Voir le bien</button>
+                <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ b.toggleFav }}">Retirer</button>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ noFavs }}" hint-placeholder-val="{{ false }}">
+        <div style="border: 2px solid var(--color-divider); padding: 48px 32px;">
+          <p style="margin: 0 0 20px; font-size: 16px; color: color-mix(in srgb, var(--color-text) 80%, transparent);">Aucun bien retenu pour l’instant. Ajoutez des biens depuis le portefeuille pour les comparer et les envoyer à l’agence.</p>
+          <button type="button" class="btn btn-primary" sc-camel-on-click="{{ goBiens }}">Parcourir les biens</button>
+        </div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+
+  <div style="position: fixed; right: 24px; bottom: 24px; z-index: 60; display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+    <sc-if value="{{ chatOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="width: min(360px, calc(100vw - 48px)); background: var(--color-bg); border: 2px solid var(--color-accent-900); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; overflow: hidden; height: min(560px, calc(100vh - 130px));">
+        <div style="background: var(--color-accent-900); color: var(--color-bg); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex: 0 0 auto;">
+          <div>
+            <p style="font-family: var(--font-heading); font-size: 20px; margin: 0;">Alassani en direct</p>
+            <p style="margin: 4px 0 0; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; color: var(--color-accent-300);">{{ chatStatus }}</p>
+          </div>
+          <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ closeChat }}" style="color: var(--color-bg); border-color: color-mix(in srgb, var(--color-bg) 55%, transparent); padding: 6px 12px;">Fermer</button>
+        </div>
+        <div data-chat-list="1" style="padding: 20px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; flex: 1 1 0; min-height: 0;">
+          <sc-for list="{{ chatMsgs }}" as="m" hint-placeholder-count="2">
+            <div style="max-width: 86%; padding: 12px 16px; font-size: 14.5px; line-height: 1.55; align-self: {{ m.align }}; background: {{ m.bg }}; color: {{ m.fg }}; border: {{ m.border }};">
+              <span style="display: block; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.62; margin-bottom: 6px;">{{ m.who }}</span>
+              {{ m.text }}
+            </div>
+          </sc-for>
+        </div>
+        <div style="border-top: 2px solid var(--color-divider); padding: 12px 20px; display: flex; gap: 10px; overflow-x: auto; flex: 0 0 auto;">
+          <sc-for list="{{ chatQuick }}" as="qq" hint-placeholder-count="3">
+            <button type="button" class="btn btn-ghost" sc-camel-on-click="{{ qq.send }}" style="padding: 6px 12px; font-size: 10.5px; white-space: nowrap;">{{ qq.label }}</button>
+          </sc-for>
+        </div>
+        <form sc-camel-on-submit="{{ onChatSubmit }}" style="border-top: 2px solid var(--color-divider); padding: 14px 20px; display: flex; gap: 10px; flex: 0 0 auto;">
+          <input class="input" type="text" value="{{ chatDraft }}" sc-camel-on-input="{{ onChatInput }}" placeholder="Écrivez votre message…" style="flex: 1 1 auto;">
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </form>
+      </div>
+    </sc-if>
+    <button type="button" class="btn btn-primary" sc-camel-on-click="{{ toggleChat }}" style="box-shadow: var(--shadow-md);">{{ chatToggleLabel }}</button>
+  </div>
+
+  <footer style="border-top: 2px solid var(--color-divider); background: var(--color-bg);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 6vw, 88px) clamp(20px, 4vw, 40px); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+      <div>
+        <p style="font-family: var(--font-heading); font-weight: var(--font-heading-weight); font-size: 20px; letter-spacing: 0; margin: 0 0 12px;">{{ agencyName }}</p>
+        <p style="margin: 0; font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Rue des Cocotiers, Coconut — Lomé, Togo<br>{{ phone }}</p>
+      </div>
+      <div>
+        <p style="margin: 0 0 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Acheter</p>
+        <div style="display: grid; gap: 8px; font-size: 14px;">
+          <a sc-camel-on-click="{{ goBiens }}" style="cursor: pointer;">Villas et maisons</a>
+          <a sc-camel-on-click="{{ goBiens }}" style="cursor: pointer;">Appartements</a>
+          <a sc-camel-on-click="{{ goBiens }}" style="cursor: pointer;">Biens de prestige</a>
+          <a sc-camel-on-click="{{ goBiens }}" style="cursor: pointer;">Neuf, terrains &amp; investissement</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin: 0 0 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Vendre &amp; louer</p>
+        <div style="display: grid; gap: 8px; font-size: 14px;">
+          <a sc-camel-on-click="{{ goEstimation }}" style="cursor: pointer;">Estimation gratuite</a>
+          <a sc-camel-on-click="{{ goContact }}" style="cursor: pointer;">Gestion locative</a>
+          <a sc-camel-on-click="{{ goContact }}" style="cursor: pointer;">Commerces &amp; bureaux</a>
+          <a sc-camel-on-click="{{ goContact }}" style="cursor: pointer;">Terrains</a>
+        </div>
+      </div>
+      <div>
+        <p style="margin: 0 0 12px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Agence</p>
+        <div style="display: grid; gap: 8px; font-size: 14px;">
+          <a sc-camel-on-click="{{ goAgence }}" style="cursor: pointer;">L’équipe</a>
+          <a sc-camel-on-click="{{ goContact }}" style="cursor: pointer;">Contact</a>
+          <a sc-camel-on-click="{{ goHonoraires }}" style="cursor: pointer;">Honoraires</a>
+          <a sc-camel-on-click="{{ goHonoraires }}" style="cursor: pointer;">Mentions légales</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 40px) 48px; font-size: 12.5px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">
+      <p style="margin: 0;">Agence immobilière enregistrée à Lomé — RCCM TG-LOM 2009 B 4187, NIF 1000 428 517. Honoraires de 5 % à la charge de l’acquéreur, barème affiché en agence. Prix en francs CFA. Biens présentés à titre d’exemple.</p>
+    </div>
+  </footer>
+</div>

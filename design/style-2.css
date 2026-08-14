@@ -1,0 +1,45 @@
+
+  [data-theme="bw"] {
+    --color-accent: #17191a;
+    --color-accent-100: #ececec; --color-accent-200: #d6d6d6; --color-accent-300: #b4b4b4;
+    --color-accent-400: #7c7c7c; --color-accent-500: #17191a; --color-accent-600: #101112;
+    --color-accent-700: #0b0c0c; --color-accent-800: #070808; --color-accent-900: #050505;
+    --color-accent-2: #17191a;
+    --color-accent-2-100: #ececec; --color-accent-2-200: #d6d6d6; --color-accent-2-300: #b4b4b4;
+    --color-accent-2-400: #7c7c7c; --color-accent-2-500: #17191a; --color-accent-2-600: #101112;
+    --color-accent-2-700: #0b0c0c; --color-accent-2-800: #070808; --color-accent-2-900: #050505;
+    --color-bg: #ffffff; --color-text: #101112; --color-divider: #101112;
+  }
+  [data-theme="green"] {
+    --color-accent: #0e6f5e;
+    --color-accent-100: #dfeeea; --color-accent-200: #bcdcd5; --color-accent-300: #93c6bc;
+    --color-accent-400: #4f9d8e; --color-accent-500: #0e6f5e; --color-accent-600: #0b5c4e;
+    --color-accent-700: #08483e; --color-accent-800: #063429; --color-accent-900: #04231c;
+    --color-accent-2: #0e6f5e;
+    --color-accent-2-100: #dfeeea; --color-accent-2-200: #bcdcd5; --color-accent-2-300: #93c6bc;
+    --color-accent-2-400: #4f9d8e; --color-accent-2-500: #0e6f5e; --color-accent-2-600: #0b5c4e;
+    --color-accent-2-700: #08483e; --color-accent-2-800: #063429; --color-accent-2-900: #04231c;
+  }
+  :root {
+    --font-heading: "Cormorant Garamond", "Times New Roman", serif;
+    --font-heading-weight: 400;
+    --font-body: "Jost", system-ui, sans-serif;
+    --color-accent: #0e6f5e;
+    --color-accent-100: #dfeeea; --color-accent-200: #bcdcd5; --color-accent-300: #93c6bc;
+    --color-accent-400: #4f9d8e; --color-accent-500: #0e6f5e; --color-accent-600: #0b5c4e;
+    --color-accent-700: #08483e; --color-accent-800: #063429; --color-accent-900: #04231c;
+    --color-accent-2: #0e6f5e;
+    --color-accent-2-100: #dfeeea; --color-accent-2-200: #bcdcd5; --color-accent-2-300: #93c6bc;
+    --color-accent-2-400: #4f9d8e; --color-accent-2-500: #0e6f5e; --color-accent-2-600: #0b5c4e;
+    --color-accent-2-700: #08483e; --color-accent-2-800: #063429; --color-accent-2-900: #04231c;
+  }
+  body { margin: 0; background: #ffffff; color: var(--color-text); text-wrap: pretty; font-family: "Jost", system-ui, sans-serif; font-weight: 300; }
+  h1, h2, h3, .nav-brand { font-family: "Cormorant Garamond", serif !important; font-weight: 400 !important; }
+  .btn, .tag, .input, .nav a { font-family: "Jost", system-ui, sans-serif; }
+  .nav a, .nav .btn { white-space: nowrap; }
+  .nav { flex-wrap: wrap; row-gap: 12px; }
+  .btn { letter-spacing: 0.04em; text-transform: uppercase; font-size: 12.5px; font-weight: 400; }
+  .tag { letter-spacing: 0.06em; text-transform: uppercase; font-size: 11px; }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  *:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
