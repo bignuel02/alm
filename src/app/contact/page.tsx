@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ImageSlot } from "@/components/image-slot";
+import { OuvrirChat } from "@/components/ouvrir-chat";
 import { AGENCE } from "@/data/agence";
+import { PHOTOS } from "@/data/photos";
 
 import { ContactForm } from "./contact-form";
 
@@ -69,6 +71,7 @@ export default function ContactPage() {
             <Link href="/estimation" className="btn btn-secondary">
               Estimer un bien
             </Link>
+            <OuvrirChat className="btn btn-ghost" />
           </div>
         </div>
 
@@ -80,12 +83,7 @@ export default function ContactPage() {
             boxShadow: "var(--shadow-lg)",
           }}
         >
-          <ImageSlot
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85"
-            alt="Espace de rendez-vous élégant"
-            fill
-            priority
-          />
+          <ImageSlot photo={PHOTOS.residenceBlewu} fill priority />
         </div>
       </section>
 

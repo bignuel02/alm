@@ -28,6 +28,7 @@ const COLONNES = [
       { label: "Contact", href: "/contact" },
       { label: "Honoraires", href: "/honoraires" },
       { label: "Mentions légales", href: "/honoraires" },
+      { label: "Crédits photo", href: "/credits" },
     ],
   },
 ] as const;

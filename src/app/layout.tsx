@@ -1,32 +1,30 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Archivo, Inter } from "next/font/google";
 
+import { ChatWidget } from "@/components/chat-widget";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { AGENCE } from "@/data/agence";
 
 import "./globals.css";
 
-const display = localFont({
+/**
+ * Archivo carries the headings — a contemporary grotesque with tight,
+ * squarish caps that hold up at display sizes without turning decorative.
+ * Inter stays underneath it for running text and UI, where neutrality is
+ * the point.
+ */
+const display = Archivo({
   variable: "--font-display",
-  src: [
-    {
-      path: "../../design/assets/acc6d29c.woff2",
-      weight: "400 700",
-      style: "normal",
-    },
-  ],
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  display: "swap",
 });
 
-const sans = localFont({
+const sans = Inter({
   variable: "--font-sans",
-  src: [
-    {
-      path: "../../design/assets/60e6d122.woff2",
-      weight: "400 800",
-      style: "normal",
-    },
-  ],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -44,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <ChatWidget />
       </body>
     </html>
   );

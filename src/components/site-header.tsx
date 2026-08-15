@@ -2,93 +2,132 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 import { useFavoris } from "@/components/use-favoris";
 
 const LIENS = [
-  { href: "/biens", label: "Biens" },
-  { href: "/agence", label: "Agence" },
+  { href: "/biens", label: "Nos biens" },
+  { href: "/agence", label: "L’agence" },
   { href: "/estimation", label: "Estimation" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
+const lienStyle: React.CSSProperties = {
+  fontSize: 11.5,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+};
+
 export function SiteHeader() {
   const pathname = usePathname();
   const { count } = useFavoris();
+  const [menuOuvert, setMenuOuvert] = useState(false);
+  const [cheminVu, setCheminVu] = useState(pathname);
+
+  // Le panneau ne doit pas survivre à la navigation. Ajustement pendant le
+  // rendu plutôt que dans un effet : React relance le rendu immédiatement,
+  // sans passe supplémentaire à l'écran ni cascade.
+  if (cheminVu !== pathname) {
+    setCheminVu(pathname);
+    setMenuOuvert(false);
+  }
+
+  const estActif = (href: string) => pathname.startsWith(href);
 
   return (
     <nav
-      className="nav sticky top-0 z-20"
+      className="nav sticky top-0 z-30"
       style={{
-        background: "color-mix(in srgb, var(--color-bg) 86%, white)",
+        background: "color-mix(in srgb, var(--color-bg) 92%, transparent)",
+        backdropFilter: "blur(8px)",
         borderBottom: "1px solid var(--color-divider)",
-        gap: 26,
-        padding: "16px clamp(18px, 4vw, 42px)",
-        backdropFilter: "blur(18px)",
+        gap: 24,
+        paddingBlock: 16,
       }}
     >
-      <Link
-        href="/"
-        className="nav-brand"
-        style={{
-          display: "grid",
-          gap: 1,
-          color: "var(--color-ink)",
-          lineHeight: 1,
-          marginRight: "clamp(8px, 3vw, 36px)",
-        }}
-      >
+      {/* Verrouillage en deux lignes : le nom porte, « immobilier » qualifie.
+          Empilé, il tient dans la largeur d'un téléphone là où une seule
+          ligne tracée à 0.16em déborderait. */}
+      <Link href="/" className="nav-brand" style={{ display: "grid", lineHeight: 1 }}>
         <span
           style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: 24,
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
+            fontSize: "clamp(18px, 2.4vw, 23px)",
+            letterSpacing: "0.16em",
           }}
         >
-          Alassani
+          ALASSANI
         </span>
         <span
           style={{
             fontFamily: "var(--font-body)",
-            fontSize: 10,
-            fontWeight: 800,
-            letterSpacing: "0.24em",
-            textTransform: "uppercase",
+            fontSize: "clamp(8px, 1vw, 9.5px)",
+            fontWeight: 500,
+            letterSpacing: "0.4em",
             color: "var(--color-gold)",
+            marginTop: 5,
           }}
         >
-          Immobilier Lomé
+          IMMOBILIER
         </span>
       </Link>
 
-      {LIENS.map((lien) => (
+      {/* Barre complète — au-dessus de 1000px */}
+      <div className="nav-desktop">
+        {LIENS.map((lien) => (
+          <Link
+            key={lien.href}
+            href={lien.href}
+            aria-current={estActif(lien.href) ? "page" : undefined}
+            style={lienStyle}
+          >
+            {lien.label}
+          </Link>
+        ))}
+
         <Link
-          key={lien.href}
-          href={lien.href}
-          aria-current={pathname.startsWith(lien.href) ? "page" : undefined}
-          style={{
-            fontSize: 11.5,
-            fontWeight: 800,
-            letterSpacing: "0.14em",
-            textTransform: "uppercase",
-          }}
+          href="/favoris"
+          className="btn btn-ghost"
+          style={{ marginLeft: "auto", fontSize: 12 }}
         >
-          {lien.label}
+          Favoris ({count})
         </Link>
-      ))}
 
-      <Link
-        href="/favoris"
-        className="btn btn-ghost"
-        style={{ marginLeft: "auto", fontSize: 12 }}
+        <Link href="/contact" className="btn btn-primary" style={{ fontSize: 12 }}>
+          Prendre rendez-vous
+        </Link>
+      </div>
+
+      {/* Bascule — en dessous de 1000px */}
+      <button
+        type="button"
+        className="btn btn-secondary nav-burger"
+        onClick={() => setMenuOuvert((o) => !o)}
+        aria-expanded={menuOuvert}
+        aria-controls="menu-principal"
       >
-        Favoris ({count})
-      </Link>
+        {menuOuvert ? "Fermer" : "Menu"}
+      </button>
 
-      <Link href="/contact" className="btn btn-primary" style={{ fontSize: 12 }}>
-        Rendez-vous
-      </Link>
+      {menuOuvert ? (
+        <div className="nav-panel" id="menu-principal">
+          {LIENS.map((lien) => (
+            <Link
+              key={lien.href}
+              href={lien.href}
+              aria-current={estActif(lien.href) ? "page" : undefined}
+            >
+              {lien.label}
+            </Link>
+          ))}
+          <Link href="/favoris" aria-current={estActif("/favoris") ? "page" : undefined}>
+            Favoris ({count})
+          </Link>
+          <Link href="/contact" className="btn btn-primary">
+            Prendre rendez-vous
+          </Link>
+        </div>
+      ) : null}
     </nav>
   );
 }

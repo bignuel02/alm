@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ImageSlot } from "@/components/image-slot";
+import { Monogramme } from "@/components/monogramme";
 import { AGENCE, EQUIPE, VALEURS } from "@/data/agence";
+import { PHOTOS } from "@/data/photos";
 
 export const metadata: Metadata = {
   title: "L'agence",
@@ -24,13 +26,6 @@ const kicker: React.CSSProperties = {
   textTransform: "uppercase",
   color: "var(--color-gold)",
 };
-
-const portraits = [
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=85",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85",
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=85",
-];
 
 export default function AgencePage() {
   return (
@@ -79,21 +74,11 @@ export default function AgencePage() {
             alignItems: "end",
           }}
         >
-          <div className="relative min-h-[360px] grayscale-photo" style={{ borderRadius: 8, overflow: "hidden" }}>
-            <ImageSlot
-              src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1100&q=85"
-              alt="Intérieur contemporain"
-              fill
-              priority
-            />
+          <div className="grayscale-photo relative min-h-[360px]" style={{ borderRadius: 8, overflow: "hidden" }}>
+            <ImageSlot photo={PHOTOS.residenceBlewu} fill priority sizes="(max-width: 900px) 45vw, 22vw" />
           </div>
-          <div className="relative min-h-[500px] grayscale-photo" style={{ borderRadius: 8, overflow: "hidden" }}>
-            <ImageSlot
-              src="/agency-villa.jpg"
-              alt="Architecture résidentielle entourée de jardin"
-              fill
-              priority
-            />
+          <div className="grayscale-photo relative min-h-[500px]" style={{ borderRadius: 8, overflow: "hidden" }}>
+            <ImageSlot photo={PHOTOS.villaVerdure2} fill priority sizes="(max-width: 900px) 55vw, 28vw" />
           </div>
         </div>
       </section>
@@ -152,7 +137,7 @@ export default function AgencePage() {
             gap: "clamp(20px, 3vw, 34px)",
           }}
         >
-          {EQUIPE.map((membre, index) => (
+          {EQUIPE.map((membre) => (
             <article
               key={membre.nom}
               style={{
@@ -163,9 +148,7 @@ export default function AgencePage() {
                 boxShadow: "var(--shadow-sm)",
               }}
             >
-              <div className="relative min-h-[330px] grayscale-photo">
-                <ImageSlot src={portraits[index]} alt={membre.nom} fill />
-              </div>
+              <Monogramme nom={membre.nom} />
               <div style={{ padding: 24 }}>
                 <span className="tag tag-outline">{membre.role}</span>
                 <h3 style={{ fontSize: 30, marginTop: 16 }}>{membre.nom}</h3>
@@ -192,7 +175,7 @@ export default function AgencePage() {
             color: "var(--color-bg)",
             padding: "clamp(34px, 5vw, 68px)",
             display: "grid",
-            gridTemplateColumns: "minmax(260px, 1fr) auto",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
             gap: 24,
             alignItems: "end",
           }}

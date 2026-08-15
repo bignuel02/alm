@@ -3,64 +3,66 @@
 /* ══════════════════════════════════════════════════════════════════════════
    Alassani Immobilier — design tokens.
 
-   Ported from the Claude Design bundle (design/). "Modernist" base system,
-   retuned editorial: serif headings, light sans body, square corners.
+   Ported from the Claude Design bundle (design/), then retuned:
+   warm graphite + ivory ground, discreet copper accent, contemporary
+   grotesque headings.
 
-   Deep green is the house palette and lives on :root. The design's
-   near-black variant is kept as [data-theme="bw"] — set it on <html> to
-   switch the whole site over.
+   Everything is one warm family — the neutrals carry a red-yellow bias so
+   ivory, graphite and copper read as the same material at different
+   depths rather than three colours sharing a page.
    ══════════════════════════════════════════════════════════════════════ */
 
 :root {
-  --color-bg: #fbf8f1;
-  /* Off-white pulled a few degrees toward the accent rather than the
-     design's flat grey — panels read as part of the palette, not as a
-     separate neutral sitting on top of it. */
-  --color-surface: #f3eee3;
-  --color-text: #171615;
-  --color-divider: color-mix(in srgb, #171615 18%, transparent);
+  /* Ivory ground. */
+  --color-bg: #f7f3ec;
+  --color-surface: #efe9de;
+  /* Warm graphite, never pure black — it would go cold against the ivory. */
+  --color-text: #24211d;
+  --color-divider: color-mix(in srgb, #24211d 16%, transparent);
 
-  /* Tonal ramps — one shared lightness scale, so the same step of any role
-     matches the others in visual value. */
-  --color-neutral-100: #f8f4f4;
-  --color-neutral-200: #eae7e7;
-  --color-neutral-300: #d7d3d3;
-  --color-neutral-400: #bab6b6;
-  --color-neutral-500: #9b9797;
-  --color-neutral-600: #7d7979;
-  --color-neutral-700: #605d5d;
-  --color-neutral-800: #444141;
-  --color-neutral-900: #2d2b2b;
+  /* Warm graphite ramp — the workhorse neutral. */
+  --color-neutral-100: #f3efe8;
+  --color-neutral-200: #e3ddd2;
+  --color-neutral-300: #cac2b4;
+  --color-neutral-400: #a79e8e;
+  --color-neutral-500: #837a6c;
+  --color-neutral-600: #635b50;
+  --color-neutral-700: #4a443b;
+  --color-neutral-800: #322e28;
+  --color-neutral-900: #1f1c19;
 
-  /* Deep green — the house accent. */
-  --color-accent: #0e4f45;
-  --color-accent-100: #e3ece7;
-  --color-accent-200: #c3d7ce;
-  --color-accent-300: #94b9ab;
-  --color-accent-400: #548d7d;
-  --color-accent-500: #0e4f45;
-  --color-accent-600: #0a423a;
-  --color-accent-700: #07352f;
-  --color-accent-800: #062821;
-  --color-accent-900: #031d18;
+  /* Copper — kept low-chroma so it reads as metal, not orange. Steps 800
+     and 900 fall back to graphite: dark panels are graphite, and copper
+     stays a highlight rather than becoming a brown wash. */
+  --color-accent: #a4633c;
+  --color-accent-100: #f6ece3;
+  --color-accent-200: #ebd6c4;
+  --color-accent-300: #d9b294;
+  --color-accent-400: #c08a5e;
+  --color-accent-500: #a4633c;
+  --color-accent-600: #8a5231;
+  --color-accent-700: #6b4027;
+  --color-accent-800: #332d26;
+  --color-accent-900: #211e1a;
 
-  --color-gold: #b78a42;
-  --color-gold-100: #f3e8d2;
-  --color-ink: #11100f;
+  /* Alias kept for the kickers and numerals already using it. */
+  --color-gold: #a9683f;
+  --color-gold-100: #f6ece3;
+  --color-ink: #1a1815;
 
-  --color-accent-2: #0e6f5e;
-  --color-accent-2-100: #dfeeea;
-  --color-accent-2-200: #bcdcd5;
-  --color-accent-2-300: #93c6bc;
-  --color-accent-2-400: #4f9d8e;
-  --color-accent-2-500: #0e6f5e;
-  --color-accent-2-600: #0b5c4e;
-  --color-accent-2-700: #08483e;
-  --color-accent-2-800: #063429;
-  --color-accent-2-900: #04231c;
+  --color-accent-2: #7d7161;
+  --color-accent-2-100: #f2efe9;
+  --color-accent-2-200: #e0dace;
+  --color-accent-2-300: #c5bcaa;
+  --color-accent-2-400: #a1957f;
+  --color-accent-2-500: #7d7161;
+  --color-accent-2-600: #665c4e;
+  --color-accent-2-700: #4e463b;
+  --color-accent-2-800: #363029;
+  --color-accent-2-900: #211e1a;
 
-  --font-heading: var(--font-display), "Times New Roman", serif;
-  --font-heading-weight: 500;
+  --font-heading: var(--font-display), system-ui, sans-serif;
+  --font-heading-weight: 600;
   --font-body: var(--font-sans), system-ui, sans-serif;
 
   --space-1: 4px;
@@ -77,36 +79,6 @@
   --shadow-sm: 0 10px 24px color-mix(in srgb, #171615 8%, transparent);
   --shadow-md: 0 18px 44px color-mix(in srgb, #171615 12%, transparent);
   --shadow-lg: 0 34px 88px color-mix(in srgb, #171615 18%, transparent);
-}
-
-/* Noir & blanc — kept from the design as an opt-in variant. */
-[data-theme="bw"] {
-  --color-bg: #ffffff;
-  --color-surface: #f2f2f2;
-  --color-text: #101112;
-  --color-divider: #101112;
-
-  --color-accent: #17191a;
-  --color-accent-100: #ececec;
-  --color-accent-200: #d6d6d6;
-  --color-accent-300: #b4b4b4;
-  --color-accent-400: #7c7c7c;
-  --color-accent-500: #17191a;
-  --color-accent-600: #101112;
-  --color-accent-700: #0b0c0c;
-  --color-accent-800: #070808;
-  --color-accent-900: #050505;
-
-  --color-accent-2: #17191a;
-  --color-accent-2-100: #ececec;
-  --color-accent-2-200: #d6d6d6;
-  --color-accent-2-300: #b4b4b4;
-  --color-accent-2-400: #7c7c7c;
-  --color-accent-2-500: #17191a;
-  --color-accent-2-600: #101112;
-  --color-accent-2-700: #0b0c0c;
-  --color-accent-2-800: #070808;
-  --color-accent-2-900: #050505;
 }
 
 /* Expose the tokens to Tailwind so `bg-surface`, `text-accent-700`,
@@ -181,8 +153,10 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: var(--font-heading-weight);
-  line-height: 1.12;
-  letter-spacing: 0;
+  line-height: 1.1;
+  /* A grotesque set large opens up; pull it back so display sizes stay
+     tight and the small ones aren't affected enough to hurt. */
+  letter-spacing: -0.021em;
   margin: 0 0 var(--space-2);
 }
 
@@ -233,6 +207,65 @@ img {
 
 figure {
   margin: 0;
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────────
+   Rien ici ne doit provoquer de défilement horizontal : c'est le défaut le
+   plus visible sur téléphone et le plus facile à laisser passer au bureau. */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Les titres longs en français cassent mal (« Nyékonakpoè »,
+   « Adidogomé — Assiyéyé »). */
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+/**
+ * Découpe en deux colonnes qui s'empile.
+ *
+ * Une grille `minmax(280px, .8fr) minmax(300px, 1.2fr)` ne s'empile jamais :
+ * sous 580px elle déborde au lieu de passer à la ligne. Ici le mobile est
+ * une seule colonne, et le rapport ne s'applique qu'au-dessus de 900px via
+ * --split.
+ */
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--split-gap, clamp(28px, 4vw, 56px));
+}
+
+@media (min-width: 900px) {
+  .split {
+    grid-template-columns: var(--split, 1fr 1fr);
+  }
+}
+
+/* Un tableau ne se comprime pas : on le fait défiler dans sa boîte. */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 560px) {
+  h1 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  h3 {
+    font-size: 21px;
+  }
+  body {
+    font-size: 15.5px;
+  }
 }
 
 figcaption {
@@ -534,6 +567,107 @@ figcaption {
   }
   .nav .btn {
     white-space: nowrap;
+  }
+
+  /* — en-tête responsive — */
+
+  /* Sous 1000px la barre complète (5 liens + 2 boutons) déborde ou passe sur
+     trois lignes : elle bascule sur un panneau dépliant. */
+  .nav-desktop {
+    display: contents;
+  }
+  .nav-burger {
+    display: none;
+  }
+
+  @media (max-width: 999px) {
+    .nav-desktop {
+      display: none;
+    }
+    .nav-burger {
+      display: inline-flex;
+      margin-left: auto;
+    }
+  }
+
+  .nav-panel {
+    display: grid;
+    gap: 2px;
+    width: 100%;
+    padding-top: var(--space-3);
+    margin-top: var(--space-2);
+    border-top: 1px solid var(--color-divider);
+  }
+  .nav-panel a {
+    padding: 12px 4px;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .nav-panel .btn {
+    justify-content: flex-start;
+    margin-top: var(--space-2);
+  }
+
+  /* — bouton flottant du chat — */
+
+  .chat-fab {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--color-accent-900);
+    border-radius: 999px;
+    background: var(--color-accent-900);
+    color: var(--color-bg);
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 180ms ease,
+      background 180ms ease,
+      box-shadow 180ms ease;
+  }
+  .chat-fab:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .chat-fab:active {
+    transform: translateY(0);
+  }
+
+  .chat-fab-pastille {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 999px;
+    background: #45c07f;
+    border: 2px solid var(--color-accent-900);
+  }
+  .chat-fab:hover .chat-fab-pastille {
+    border-color: var(--color-accent);
+  }
+
+  /* La pastille respire pour signaler « en ligne » — sauf si l'utilisateur
+     a demandé moins d'animation. */
+  @media (prefers-reduced-motion: no-preference) {
+    .chat-fab-pastille {
+      animation: chat-pouls 2.4s ease-in-out infinite;
+    }
+  }
+
+  @keyframes chat-pouls {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, #45c07f 60%, transparent);
+    }
+    60% {
+      box-shadow: 0 0 0 7px color-mix(in srgb, #45c07f 0%, transparent);
+    }
   }
 
   /* — tables — */

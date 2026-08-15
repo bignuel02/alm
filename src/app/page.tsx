@@ -4,6 +4,7 @@ import { BienCard } from "@/components/bien-card";
 import { ImageSlot } from "@/components/image-slot";
 import { RechercheRapide } from "@/components/recherche-rapide";
 import { AGENCE, EXPERTISES } from "@/data/agence";
+import { PHOTOS } from "@/data/photos";
 import { countBiens, listFeatured } from "@/lib/repository";
 
 const CHIFFRES = [
@@ -43,12 +44,7 @@ export default async function AccueilPage() {
         }}
       >
         <div className="grayscale-photo absolute inset-0 opacity-55">
-          <ImageSlot
-            src="/agency-villa.jpg"
-            alt="Villa d'architecture entourée de jardin"
-            fill
-            priority
-          />
+          <ImageSlot photo={PHOTOS.palaisJustice} fill priority sizes="100vw" />
         </div>
         <div
           style={{
@@ -121,12 +117,14 @@ export default async function AccueilPage() {
         }}
       >
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(260px, 0.9fr) minmax(280px, 1.4fr)",
-            gap: "clamp(36px, 6vw, 90px)",
-            alignItems: "end",
-          }}
+          className="split"
+          style={
+            {
+              "--split": "0.9fr 1.4fr",
+              "--split-gap": "clamp(36px, 6vw, 90px)",
+              alignItems: "end",
+            } as React.CSSProperties
+          }
         >
           <div>
             <span style={{ ...kicker, marginBottom: 22 }}>Maison indépendante</span>
@@ -158,7 +156,7 @@ export default async function AccueilPage() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(45%, 190px), 1fr))",
             borderTop: "1px solid var(--color-divider)",
             borderBottom: "1px solid var(--color-divider)",
           }}
@@ -243,13 +241,15 @@ export default async function AccueilPage() {
       </section>
 
       <section
-        style={{
-          ...SHELL,
-          display: "grid",
-          gridTemplateColumns: "minmax(280px, 0.8fr) minmax(300px, 1.2fr)",
-          gap: "clamp(36px, 6vw, 86px)",
-          alignItems: "start",
-        }}
+        className="split"
+        style={
+          {
+            ...SHELL,
+            "--split": "0.8fr 1.2fr",
+            "--split-gap": "clamp(36px, 6vw, 86px)",
+            alignItems: "start",
+          } as React.CSSProperties
+        }
       >
         <div>
           <span style={{ ...kicker, marginBottom: 18 }}>Nos expertises</span>
@@ -308,21 +308,24 @@ export default async function AccueilPage() {
         }}
       >
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "minmax(280px, 0.95fr) minmax(280px, 1.05fr)",
-            borderRadius: "var(--radius-lg)",
-            overflow: "hidden",
-            background: "var(--color-accent-900)",
-            color: "var(--color-bg)",
-            boxShadow: "var(--shadow-lg)",
-          }}
+          className="split"
+          style={
+            {
+              "--split": "0.95fr 1.05fr",
+              "--split-gap": "0px",
+              borderRadius: "var(--radius-lg)",
+              overflow: "hidden",
+              background: "var(--color-accent-900)",
+              color: "var(--color-bg)",
+              boxShadow: "var(--shadow-lg)",
+            } as React.CSSProperties
+          }
         >
           <div className="relative min-h-[360px] grayscale-photo">
             <ImageSlot
-              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1400&q=85"
-              alt="Salon contemporain avec mobilier haut de gamme"
+              photo={PHOTOS.assembleeNationale}
               fill
+              sizes="(max-width: 900px) 100vw, 45vw"
             />
           </div>
           <div style={{ padding: "clamp(34px, 5vw, 68px)" }}>

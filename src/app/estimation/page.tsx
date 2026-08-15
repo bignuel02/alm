@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { ImageSlot } from "@/components/image-slot";
 import { ETAPES_ESTIMATION } from "@/data/agence";
+import { PHOTOS } from "@/data/photos";
 
 import { EstimationForm } from "./estimation-form";
 
@@ -73,12 +74,7 @@ export default function EstimationPage() {
             boxShadow: "var(--shadow-lg)",
           }}
         >
-          <ImageSlot
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1400&q=85"
-            alt="Maison contemporaine au coucher du soleil"
-            fill
-            priority
-          />
+          <ImageSlot photo={PHOTOS.villaVerdure} fill priority />
         </div>
       </section>
 

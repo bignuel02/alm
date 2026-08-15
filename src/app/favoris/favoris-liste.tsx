@@ -49,8 +49,8 @@ export function FavorisListe() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(420px, 1fr))",
-          gap: "clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px)",
+          gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 340px), 1fr))",
+          gap: "clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px)",
         }}
       >
         {biens.map((bien) => (

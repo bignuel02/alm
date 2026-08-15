@@ -42,10 +42,13 @@ depuis eux.
 
 Les tokens vivent dans `src/app/globals.css` :
 
-- **Accent** vert profond `#0e6f5e`, ramp `--color-accent-100` → `900`
-- **Titres** Cormorant Garamond 400 · **Corps** Jost 300
-- **Angles droits** partout (`--radius-*: 0`)
-- Le noir & blanc du design reste disponible : `data-theme="bw"` sur `<html>`
+- **Fond** ivoire `#f7f3ec` · **Texte** graphite chaud `#24211d`
+- **Accent** cuivre discret `#a4633c`, ramp `--color-accent-100` → `900`.
+  Les pas 800/900 basculent sur le graphite : les panneaux sombres sont
+  graphite, le cuivre reste un rehaut.
+- **Titres** Archivo 600, tracking `-0.021em` · **Corps** Inter
+- Neutres à biais chaud, pour qu’ivoire, graphite et cuivre lisent comme une
+  même matière à trois profondeurs
 
 Les classes du design (`.btn`, `.input`, `.card`, `.tag`, `.nav`…) sont portées
 telles quelles dans `globals.css`, donc le balisage du design se transpose
@@ -56,6 +59,23 @@ presque à l’identique.
 Tout passe par `src/lib/repository.ts`, dont les fonctions sont déjà `async` et
 renvoient des objets simples. Brancher Postgres / Supabase plus tard ne touchera
 que ce fichier — aucune page ni composant ne bouge.
+
+## Photographies
+
+Toutes les photos viennent de **Wikimedia Commons** sous licence libre et sont
+servies depuis `public/photos` (Wikimedia demande de ne pas pointer sur
+`upload.wikimedia.org` en production). Métadonnées relevées via l’API Commons
+dans `src/data/photos.ts`, crédits affichés par `<PhotoCredit>` et récapitulés
+sur `/credits`.
+
+Deux règles tenues volontairement :
+
+- **Les annonces n’ont pas de photo.** Mettre un immeuble réel de Lomé sous un
+  prix et une adresse inventés en ferait une fausse annonce. Le cadre légendé
+  attend les vraies photos de l’agence.
+- **Aucun portrait.** Prêter le visage d’une personne réelle à un négociateur
+  inventé serait une fausse représentation, licence libre ou non —
+  `<Monogramme>` affiche les initiales à la place.
 
 ## Reste à faire
 

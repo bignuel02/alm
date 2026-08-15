@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { BienCard } from "@/components/bien-card";
 import { listBiens } from "@/lib/repository";
+
+import { Filtres } from "./filtres";
 
 export const metadata: Metadata = {
   title: "Le portefeuille",
   description:
     "Villas, appartements, terrains titrés et biens de prestige à Lomé — chaque dossier vérifié avant mise en vente.",
 };
+
+const muted = "color-mix(in srgb, var(--color-text) 70%, transparent)";
 
 export default async function BiensPage({ searchParams }: PageProps<"/biens">) {
   const params = await searchParams;
@@ -27,29 +32,35 @@ export default async function BiensPage({ searchParams }: PageProps<"/biens">) {
       style={{
         maxWidth: 1280,
         margin: "0 auto",
-        padding: "clamp(56px, 6vw, 88px) clamp(20px, 4vw, 40px) clamp(80px, 8vw, 120px)",
+        padding:
+          "clamp(48px, 6vw, 88px) clamp(18px, 4vw, 40px) clamp(80px, 8vw, 120px)",
       }}
     >
-      <h1 style={{ fontSize: "clamp(44px, 6vw, 80px)", lineHeight: 1.02 }}>
+      <h1 style={{ fontSize: "clamp(40px, 6vw, 80px)", lineHeight: 1.02 }}>
         Le portefeuille
       </h1>
 
       <p
         style={{
-          fontSize: 11.5,
-          letterSpacing: "0.2em",
-          textTransform: "uppercase",
-          color: "color-mix(in srgb, var(--color-text) 70%, transparent)",
-          marginBottom: 48,
+          maxWidth: "56ch",
+          fontSize: 17,
+          color: muted,
+          margin: "20px 0 clamp(32px, 4vw, 48px)",
         }}
       >
-        {biens.length} bien{biens.length > 1 ? "s" : ""}
-        {biens.length > 1 ? " disponibles" : " disponible"}
+        Une trentaine de biens au plus, tous visités et vérifiés avant mise en
+        vente. Filtrez par quartier, type ou budget — le lien reste partageable.
       </p>
+
+      <Suspense fallback={null}>
+        <Filtres resultats={biens.length} />
+      </Suspense>
 
       {biens.length === 0 ? (
         <div style={{ borderTop: "2px solid var(--color-divider)", paddingTop: 48 }}>
-          <h3 style={{ fontSize: 28 }}>Aucun bien ne correspond</h3>
+          <h2 style={{ fontSize: "clamp(24px, 3vw, 32px)" }}>
+            Aucun bien ne correspond
+          </h2>
           <p
             style={{
               maxWidth: "52ch",
@@ -72,8 +83,8 @@ export default async function BiensPage({ searchParams }: PageProps<"/biens">) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(420px, 1fr))",
-            gap: "clamp(32px, 4vw, 64px) clamp(24px, 3vw, 48px)",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 340px), 1fr))",
+            gap: "clamp(28px, 4vw, 48px) clamp(20px, 3vw, 40px)",
           }}
         >
           {biens.map((bien) => (
