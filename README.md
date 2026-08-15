@@ -77,9 +77,21 @@ Deux règles tenues volontairement :
   inventé serait une fausse représentation, licence libre ou non —
   `<Monogramme>` affiche les initiales à la place.
 
+## Chat
+
+Widget flottant, monté dans le layout. Les réponses sont **scriptées** :
+`src/lib/chat.ts` teste des mots-clés et rend un texte écrit d’avance —
+aucun modèle de langage. Les montants et le nombre de biens sont calculés
+depuis `BIENS`, donc le chat ne peut pas mentir sur le portefeuille.
+
+L’ordre des règles compte : la première qui accroche gagne, du plus précis au
+plus général. Ouvrir le chat depuis ailleurs :
+`window.dispatchEvent(new Event(EVENEMENT_OUVRIR_CHAT))`, ou `<OuvrirChat />`.
+
 ## Reste à faire
 
-- Fiche bien, agence, estimation, contact — écrans en placeholder, design prêt
-- Filtres du portefeuille (le repository les gère déjà, il manque l’UI)
-- Widget de chat — maquette scriptée, conforme au design
-- Photos : `ImageSlot` affiche un cadre vide tant que `src` n’est pas fourni
+- Brancher les formulaires (estimation, visite, contact) sur un vrai envoi —
+  server action + e-mail ou base
+- Photographies de l’agence pour les annonces sans image
+- Portraits de l’équipe (les monogrammes tiennent la place)
+- Passer le portefeuille en base si l’agence doit gérer ses annonces
