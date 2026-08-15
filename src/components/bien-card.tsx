@@ -13,7 +13,7 @@ export function BienCard({ bien }: { bien: Bien }) {
 
   return (
     <article
-      className="flex flex-col"
+      className="relative flex flex-col"
       style={{
         background: "color-mix(in srgb, var(--color-bg) 82%, white)",
         border: "1px solid color-mix(in srgb, var(--color-text) 10%, transparent)",
@@ -22,7 +22,10 @@ export function BienCard({ bien }: { bien: Bien }) {
         boxShadow: "var(--shadow-sm)",
       }}
     >
-      <Link href={href} className="grayscale-photo relative block">
+      {/* Pas de <Link> autour de l'image : le crédit photo contient déjà un
+          <a>, et un <a> imbriqué casse l'hydratation. C'est le titre qui
+          couvre la carte, via .stretched-link. */}
+      <div className="grayscale-photo relative">
         <ImageSlot
           photo={photoPrincipale(bien.ref)}
           ratio="4 / 3"
@@ -30,7 +33,7 @@ export function BienCard({ bien }: { bien: Bien }) {
           alt={bien.titre}
           sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 33vw"
         />
-      </Link>
+      </div>
 
       <div style={{ padding: "24px 24px 0", display: "flex", gap: 8, flexWrap: "wrap" }}>
         <span className="tag tag-accent">{bien.statut}</span>
@@ -44,7 +47,7 @@ export function BienCard({ bien }: { bien: Bien }) {
           margin: "16px 24px 10px",
         }}
       >
-        <Link href={href} style={{ color: "inherit" }}>
+        <Link href={href} className="stretched-link" style={{ color: "inherit" }}>
           {bien.titre}
         </Link>
       </h3>
@@ -77,7 +80,10 @@ export function BienCard({ bien }: { bien: Bien }) {
         {prixLabel(bien)}
       </p>
 
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", padding: "0 24px 24px" }}>
+      <div
+        className="above-stretched"
+        style={{ display: "flex", gap: 8, flexWrap: "wrap", padding: "0 24px 24px" }}
+      >
         <Link href={href} className="btn btn-secondary">
           Voir le bien
         </Link>

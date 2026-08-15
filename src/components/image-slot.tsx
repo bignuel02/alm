@@ -88,6 +88,7 @@ export function ImageSlot({
 export function PhotoCredit({ photo }: { photo: Photo }) {
   return (
     <figcaption
+      className="above-stretched"
       style={{
         position: "absolute",
         right: 0,

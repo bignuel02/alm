@@ -609,6 +609,25 @@ figcaption {
     margin-top: var(--space-2);
   }
 
+  /**
+   * Lien étendu : le titre couvre toute la carte.
+   *
+   * Évite d'envelopper l'image dans un second <a> — un <a> dans un <a> est
+   * invalide en HTML et casse l'hydratation. Ce qui doit rester cliquable
+   * par-dessus (crédit photo, boutons) passe en .above-stretched.
+   */
+  .stretched-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .above-stretched {
+    position: relative;
+    z-index: 2;
+  }
+
   /* — bouton flottant du chat — */
 
   .chat-fab {

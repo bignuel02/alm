@@ -350,8 +350,9 @@ export default async function FicheBienPage({ params }: PageProps<"/biens/[ref]"
             }}
           >
             {similar.map((b) => (
-              <article key={b.ref} style={{ minWidth: 0 }}>
-                <Link href={bienHref(b)} className="grayscale-photo block">
+              <article key={b.ref} className="relative" style={{ minWidth: 0 }}>
+                {/* Image hors du lien : le crédit photo porte déjà un <a>. */}
+                <div className="grayscale-photo relative">
                   <ImageSlot
                     photo={photoPrincipale(b.ref)}
                     ratio="4 / 3"
@@ -359,7 +360,7 @@ export default async function FicheBienPage({ params }: PageProps<"/biens/[ref]"
                     alt={b.titre}
                     sizes="(max-width: 700px) 100vw, 30vw"
                   />
-                </Link>
+                </div>
                 <h3
                   style={{
                     fontSize: "clamp(21px, 2vw, 26px)",
@@ -367,7 +368,11 @@ export default async function FicheBienPage({ params }: PageProps<"/biens/[ref]"
                     margin: "20px 0 10px",
                   }}
                 >
-                  <Link href={bienHref(b)} style={{ color: "inherit" }}>
+                  <Link
+                    href={bienHref(b)}
+                    className="stretched-link"
+                    style={{ color: "inherit" }}
+                  >
                     {b.titre}
                   </Link>
                 </h3>
@@ -382,7 +387,7 @@ export default async function FicheBienPage({ params }: PageProps<"/biens/[ref]"
                 >
                   {b.ville} · {prixLabel(b)}
                 </p>
-                <Link href={bienHref(b)} className="btn btn-secondary">
+                <Link href={bienHref(b)} className="btn btn-secondary above-stretched">
                   Voir le bien
                 </Link>
               </article>
