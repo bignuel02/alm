@@ -66,7 +66,6 @@ export default async function AccueilPage() {
             paddingBottom: "clamp(120px, 13vw, 180px)",
           }}
         >
-          <span style={{ ...kicker, marginBottom: 28 }}>Agence immobilière à Coconut</span>
           <h1
             style={{
               maxWidth: "920px",

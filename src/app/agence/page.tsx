@@ -40,7 +40,6 @@ export default function AgencePage() {
         }}
       >
         <div>
-          <span style={{ ...kicker, marginBottom: 22 }}>Depuis 2009 à Coconut</span>
           <h1 style={{ fontSize: "clamp(48px, 7vw, 96px)", lineHeight: 0.98 }}>
             Une agence courte, précise, très impliquée.
           </h1>

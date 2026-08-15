@@ -46,29 +46,43 @@ export function SiteHeader() {
         paddingBlock: 16,
       }}
     >
-      {/* Verrouillage en deux lignes : le nom porte, « immobilier » qualifie.
-          Empilé, il tient dans la largeur d'un téléphone là où une seule
-          ligne tracée à 0.16em déborderait. */}
-      <Link href="/" className="nav-brand" style={{ display: "grid", lineHeight: 1 }}>
+      {/* Verrouillage en deux lignes calées sur la même largeur.
+          ALASSANI fixe la largeur du bloc ; son interlettrage laisse un
+          blanc fantôme à droite, annulé par la marge négative pour que la
+          colonne mesure l'encre et non la boîte. IMMOBILIER est ensuite
+          réparti lettre à lettre en space-between : la largeur tombe juste
+          quelle que soit la fonte chargée, là où un tracking deviné ne
+          marcherait que pour un corps donné. */}
+      <Link
+        href="/"
+        className="nav-brand"
+        aria-label="Alassani Immobilier — accueil"
+        style={{ display: "grid", lineHeight: 1.04 }}
+      >
         <span
+          aria-hidden="true"
           style={{
             fontSize: "clamp(18px, 2.4vw, 23px)",
             letterSpacing: "0.16em",
+            marginRight: "-0.16em",
           }}
         >
           ALASSANI
         </span>
         <span
+          aria-hidden="true"
           style={{
-            fontFamily: "var(--font-body)",
-            fontSize: "clamp(8px, 1vw, 9.5px)",
+            display: "flex",
+            justifyContent: "space-between",
+            fontSize: "clamp(8px, 1.05vw, 10px)",
             fontWeight: 500,
-            letterSpacing: "0.4em",
             color: "var(--color-gold)",
-            marginTop: 5,
+            marginTop: 6,
           }}
         >
-          IMMOBILIER
+          {[..."IMMOBILIER"].map((lettre, i) => (
+            <span key={`${lettre}${i}`}>{lettre}</span>
+          ))}
         </span>
       </Link>
 
